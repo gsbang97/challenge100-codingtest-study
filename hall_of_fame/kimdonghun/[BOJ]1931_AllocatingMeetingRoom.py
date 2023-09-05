@@ -18,7 +18,7 @@ N = int(sys.stdin.readline())
 
 time_table = []
 
-for i in range(N):
+for _ in range(N):
     cur_metting = list(map(int, sys.stdin.readline().split()))
     time_table.append(cur_metting)
 

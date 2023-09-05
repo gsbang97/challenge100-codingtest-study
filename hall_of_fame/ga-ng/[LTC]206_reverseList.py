@@ -11,20 +11,18 @@ class Solution(object):
         """
         nodes = []
         curr = head
-        
-        if not head:
-            return head
 
-        if not head.next:
-            return head
-
+        if not curr:
+            return curr
+        if not curr.next:
+            return curr
         while curr:
             nodes.append(curr)
             curr = curr.next
 
         re = nodes.pop()
         curr = re
-        while len(nodes) > 0:
+        while nodes:
             curr.next = nodes.pop()
             curr = curr.next
         curr.next = None

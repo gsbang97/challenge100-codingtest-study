@@ -4,15 +4,8 @@ input = sys.stdin.readline
 
 n = int(input())
 
-lst = []
-
-for _ in range(n):
-    lst.append(input().rstrip())
-    
-
-lst = list(set(lst))
-    
-lst.sort()
+lst = [input().rstrip() for _ in range(n)]
+lst = sorted(set(lst))
 lst.sort(key = len)
 
 

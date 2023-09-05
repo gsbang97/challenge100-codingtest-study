@@ -9,10 +9,7 @@ import math
 def isPrime(number):
     #1혹은 자기 자신으로만 나뉘어지는 수
     number = int(number)
-    for i in range (2, int(math.sqrt(number)) + 1):
-        if number % i == 0:
-            return False
-    return True
+    return all(number % i != 0 for i in range(2, int(math.sqrt(number)) + 1))
 
 T = int(input())
 queue = deque()

@@ -9,7 +9,7 @@ N = int(N)
 
 person = set()
 
-for i in range(N):
+for _ in range(N):
     name = input()
     person.add(name)
 

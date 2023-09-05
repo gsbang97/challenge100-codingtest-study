@@ -2,30 +2,24 @@
 
 # 예술풀이 (행렬 -> 열행으로 바꾸고 zfill,rjust 사용 (떨어뜨리기))
 def rectangle(x, y, arr):
-    same = arr[x][y] == arr[x+1][y+1] \
-        == arr[x][y+1] == arr[x+1][y]
-    if same:
-        return True
-    return False
+    return arr[x][y] == arr[x + 1][y + 1] == arr[x][y + 1] == arr[x + 1][y]
     
 def solution(m, n, board):
     string = ''.join(board)
     arr = []
     answer = 0
-    
+
     #initialize
     # 행열 -> 열행 transpose
     for i in range(n):
-        tmp = []
-        for j in range(m):
-            tmp.append(string[j*n + i])
+        tmp = [string[j*n + i] for j in range(m)]
         arr.append(tmp)
-    
+
     while True:
         # 사각형 찾기
         eli = set()
         stop = True
-        
+
         for i in range(n-1):
             for j in range(m-1):
                 if arr[i][j] != '0' and rectangle(i, j, arr):
@@ -34,7 +28,7 @@ def solution(m, n, board):
         print(eli)
         if stop:
             break
-            
+
         # 사각형 삭제하기
         answer += len(eli)
         for i, j in eli:
@@ -43,8 +37,8 @@ def solution(m, n, board):
         # 떨어뜨리기
         for j in range(n):
             arr[j] = list(''.join(arr[j]).replace("0","").zfill(m))
-    
-        
+
+
     return answer
 
 print(solution(4, 5, ["CCBDE", "AAADE", "AAABF", "CCBBF"]))

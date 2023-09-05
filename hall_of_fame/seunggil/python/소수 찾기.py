@@ -49,11 +49,7 @@ visited = []
 nums = set()
 
 def isprime(num : int):
-    prime = True;
-    for i in range(2,int(math.sqrt(num))+1):
-        if num % i == 0:
-            prime = False
-            break;
+    prime = all(num % i != 0 for i in range(2, int(math.sqrt(num))+1))
     if num <= 1:
         prime = False
     return prime;
@@ -80,10 +76,5 @@ def solution(numbers):
     visited = [False for _ in range(len(numbers))]
     dfs(0,"",numbers)
 
-    answer = 0
     print(nums)
-    for i in nums:
-        if isprime(i):
-            answer += 1
-
-    return answer
+    return sum(1 for i in nums if isprime(i))

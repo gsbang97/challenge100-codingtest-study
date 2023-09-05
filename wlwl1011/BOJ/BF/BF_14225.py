@@ -6,8 +6,7 @@ atexit.register(lambda: os.write(1, stdout.getvalue()))
 
 
 N = int(input())
-arr = list(map(int, input().split()))
-arr.sort()
+arr = sorted(map(int, input().split()))
 flag = 0
 answer = 0
 for i in range(N):

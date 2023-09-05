@@ -28,11 +28,10 @@ participant	completion	return
 def solution(participant, completion):
     dic = {}
     temp = 0
-    
+
     for par in participant:
         dic[hash(par)] = par
         temp += hash(par)
     for com in completion:
         temp -= hash(com)
-    answer = str(dic[temp])
-    return answer
+    return str(dic[temp])

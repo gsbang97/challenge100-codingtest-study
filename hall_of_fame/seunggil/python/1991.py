@@ -19,10 +19,8 @@ for _ in range(n):
         inputData[pos-65].right = right-65
 
 # 전위 순휘
-stack = []
-stack.append(0)
-
-while len(stack) > 0:
+stack = [0]
+while stack:
     now = stack.pop()
     print(chr(now+65), end='')
     if inputData[now].right != -1:
@@ -33,7 +31,7 @@ print()
 
 # 중위 순휘
 stack.append(0)
-while len(stack) > 0:
+while stack:
     now = stack.pop()
 
     if inputData[now].left == -1 or inputData[inputData[now].left].visited :
@@ -51,7 +49,7 @@ stack.append(0)
 for tree in inputData:
     tree.visited = False
 
-while len(stack) > 0:
+while stack:
     now = stack.pop()
 
     if (inputData[now].left == -1 or inputData[inputData[now].left].visited) and (inputData[now].right == -1 or inputData[inputData[now].right].visited):

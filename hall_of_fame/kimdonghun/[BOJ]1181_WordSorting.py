@@ -19,7 +19,7 @@ N = int(sys.stdin.readline())
 
 w_list = []
 
-for i in range(N):
+for _ in range(N):
     word = sys.stdin.readline()[:-1]
     w_list.append(word)
 

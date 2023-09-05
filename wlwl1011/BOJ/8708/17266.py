@@ -10,10 +10,7 @@ def bs(li, m):
         return 0
     if li[-1]-li[-2] > m:
         return 0
-    for i in range(1, len(li)-2):
-        if (li[i+1]-li[i])/2 > m:
-            return 0
-    return 1
+    return next((0 for i in range(1, len(li)-2) if (li[i+1]-li[i])/2 > m), 1)
 
 N, M = int(input()), int(input())
 li = [0] + list(map(int, input().split())) + [N]

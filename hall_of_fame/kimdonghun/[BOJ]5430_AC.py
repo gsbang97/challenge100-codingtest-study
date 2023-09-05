@@ -23,24 +23,21 @@ for i in range(T):
     reverse_cnt = 0
     try: 
         for c in p:
-            if c == "R":
-                if reverse_flag == True:
-                    reverse_flag = False
-                else:
-                    reverse_flag = True
-                reverse_cnt += 1
-            elif c == "D":
+            if c == "D":
                 if reverse_flag == True:
                     arr_l.pop()
                 else:
                     arr_l.popleft()
+            elif c == "R":
+                reverse_flag = reverse_flag != True
+                reverse_cnt += 1
     except IndexError:
         print("error")
         continue
 
     if reverse_cnt % 2 == 1:
         arr_l.reverse() 
-    
+
     print("[", end="")
     for i in range(len(arr_l)):
         if i < len(arr_l) - 1:

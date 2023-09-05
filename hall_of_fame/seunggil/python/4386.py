@@ -8,7 +8,7 @@ class Node:
         self.y = y
 
     def __str__(self) -> str:
-        return str(self.x) + " " + str(self.y)
+        return f"{str(self.x)} {str(self.y)}"
 
 class Edge:
     def __init__(self, x, y, len) -> None:
@@ -17,7 +17,7 @@ class Edge:
         self.len = len
 
     def __str__(self) -> str:
-        return str(self.start) + " " + str(self.end) + " " + str(self.len)
+        return f"{str(self.start)} {str(self.end)} {str(self.len)}"
 
 n = int(input())
 inputData = []
@@ -29,14 +29,21 @@ for _ in range(n):
 edges = []
 
 for i in range(n):
-    for j in range(n):
-        if(i == j) :
-            continue
-        edges.append(Edge(i,j, sqrt((inputData[i].x - inputData[j].x) ** 2 + (inputData[i].y - inputData[j].y) ** 2)))
-
+    edges.extend(
+        Edge(
+            i,
+            j,
+            sqrt(
+                (inputData[i].x - inputData[j].x) ** 2
+                + (inputData[i].y - inputData[j].y) ** 2
+            ),
+        )
+        for j in range(n)
+        if i != j
+    )
 edges.sort(key=lambda x: (x.len, x.start, x.end))
 
-parent = [i for i in range(n)]
+parent = list(range(n))
 
 def find(a):
     if parent[a] == a:

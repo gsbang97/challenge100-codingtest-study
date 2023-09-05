@@ -4,13 +4,11 @@ from collections import deque
 dx = [-1, 0, 1, 0]
 dy = [0, -1, 0, 1]
 
-graph = []
 q = deque()
 
 M,N = map(int, sys.stdin.readline().split())
 
-for i in range(N):
-    graph.append(list(map(int, sys.stdin.readline().split())))
+graph = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
     
 
 #print(*graph, sep="\n")
@@ -51,9 +49,7 @@ for i in range(N):
     for j in range(M):
         if graph[i][j] == 0:
             is_not_ripen = True
-        if maxNum < graph[i][j]:
-            maxNum = graph[i][j]
-
+        maxNum = max(maxNum, graph[i][j])
 if is_not_ripen or maxNum == -1:
     print(-1)
 elif maxNum == 1:

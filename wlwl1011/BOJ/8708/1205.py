@@ -27,17 +27,17 @@ else:
             arr.append(score)
             arr.sort(reverse=True)
             rank = 1
-            for i in range(len(arr)):        
-                if arr[i] <= score:
+            for item in arr:        
+                if item <= score:
                     break
-                rank += 1   
+                rank += 1
             print(rank)     
 
     else:
         rank = 1
-        for i in range(len(arr)):        
-            if arr[i] <= score:
+        for item_ in arr:
+            if item_ <= score:
                 break
-            rank += 1   
+            rank += 1
         print(rank)       
      

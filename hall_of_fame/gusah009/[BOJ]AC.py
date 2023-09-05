@@ -12,9 +12,7 @@ for _ in range(T):
   flag = True
   errorFlag = False
   for p in P:
-    if p == 'R':
-      flag = not flag
-    elif p == 'D':
+    if p == 'D':
       if b == a:
         print("error")
         errorFlag = True
@@ -23,6 +21,8 @@ for _ in range(T):
         a += 1
       else:
         b -= 1
+    elif p == 'R':
+      flag = not flag
   if errorFlag:
     continue
 
@@ -31,9 +31,9 @@ for _ in range(T):
     if flag:
       print(arr[a], end="")
       for p in arr[a + 1 : b]:
-        print("," + p, end="")
+        print(f",{p}", end="")
     else:
       print(arr[b - 1], end="")
       for p in reversed(arr[a : b - 1]):
-        print("," + p, end="")
+        print(f",{p}", end="")
   print("]")

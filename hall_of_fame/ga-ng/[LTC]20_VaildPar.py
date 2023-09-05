@@ -4,7 +4,7 @@ class Solution:
 
 
         for char in s:
-            if char == '(' or char == '[' or char == '{':
+            if char in ['(', '[', '{']:
                 stack.append(char)
             else:
                 if not stack:
@@ -13,13 +13,8 @@ class Solution:
                 top = stack.pop()
                 combine = top + char
                 # print(combine, stack)
-                if combine == '()' or combine == '[]' or combine == '{}':
-                    continue
-                else:
+                if combine not in ['()', '[]', '{}']:
                     return False
-        
-        
-        if stack:
-            return False
-        else:
-            return True
+
+
+        return not stack

@@ -4,7 +4,7 @@ from collections import deque
 
 def solution(number, k):
     s = deque()
-    
+
     for digit in number:
         while s and s[-1] < digit and k>0:
             s.pop()
@@ -19,7 +19,6 @@ def solution(number, k):
     for _ in range(k):
         s.pop()
 
-    answer = ''.join(s)
-    return answer
+    return ''.join(s)
 
 print(solution("1000", 1))

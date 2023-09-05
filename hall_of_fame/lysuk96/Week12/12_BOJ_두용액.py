@@ -1,9 +1,7 @@
 # 투포인터 사용
 # https://www.acmicpc.net/problem/2470
 N = int(input())
-liquids = list(map(int, input().split(" ")))
-liquids.sort()
-
+liquids = sorted(map(int, input().split(" ")))
 lo = 0
 hi = N-1
 m = 2000000001

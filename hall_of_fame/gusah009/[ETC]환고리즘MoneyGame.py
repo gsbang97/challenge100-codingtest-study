@@ -6,8 +6,8 @@ MAX = 31
 
 operator = []
 operand = []
-dp_max = [[-sys.maxsize - 1 for col in range(MAX)] for row in range(MAX)]
-dp_min = [[sys.maxsize for col in range(MAX)] for row in range(MAX)]
+dp_max = [[-sys.maxsize - 1 for _ in range(MAX)] for _ in range(MAX)]
+dp_min = [[sys.maxsize for _ in range(MAX)] for _ in range(MAX)]
 answer = -sys.maxsize - 1
 
 def operate(num1, oper, num2):

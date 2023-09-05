@@ -31,7 +31,7 @@ while queue:
     #     for j in range(N):
     #         print(visited[i][j])
     x, y, count, time, wait = queue.popleft()
-    
+
 
     for i in range(4):
         cx = x + dx[i]
@@ -44,14 +44,13 @@ while queue:
                 visited[count][cx][cy] = visited[count][x][y] + 1 + wait
                 queue.append((cx, cy, count, not time, 0))
             elif arr[cx][cy] == 1: #벽이면
-                #낮이면    
-                if (not time) == False and count < K:
+                #낮이면
+                if time and count < K:
                     if not visited[count+1][cx][cy]:
                         #벽 부수셈
                         visited[count+1][cx][cy] = visited[count][x][y] + 1 + wait
                         queue.append((cx, cy, count+1, not time, 0))
-                #밤이셈?
-                elif(not time) == True and count < K:
+                elif not time and count < K:
                     if not visited[count+1][cx][cy]:
                         queue.append((x, y, count, not time, wait + 1))
 

@@ -11,11 +11,11 @@ global answer
 def tetromino(x,y):
     global answer
     ####
-    if x - 3 >= 0:
+    if x >= 3:
         answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-3][y])
     if x + 3 < N:
         answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+3][y])
-    if y - 3 >= 0:
+    if y >= 3:
         answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x][y-3])
     if y + 3 < M:
         answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x][y+3])
@@ -23,65 +23,63 @@ def tetromino(x,y):
     ##
     if x + 1 < N:
         if y + 1 < M:         
-            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x][y+1] + arr[x+1][y+1])  
-        if y - 1 >= 0:
-            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x][y-1] + arr[x+1][y-1])      
-    if x - 1 >=0 :
+            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x][y+1] + arr[x+1][y+1])
+        if y >= 1:
+            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x][y-1] + arr[x+1][y-1])
+    if x >= 1:
         if y + 1 < M:
-            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x][y+1] + arr[x-1][y+1]) 
-        if y - 1 >= 0:
-            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x][y-1] + arr[x-1][y-1])     
+            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x][y+1] + arr[x-1][y+1])
+        if y >= 1:
+            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x][y-1] + arr[x-1][y-1])
     #    #
     #    ##
     # #   #
-    if x - 2 >= 0:
+    if x >= 2:
         if y + 1 < M: 
             answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-2][y+1])
             answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-1][y+1] + arr[x-2][y+1])
-        if y - 1 >= 0:
+        if y >= 1:
             answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-2][y-1])
             answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-1][y-1] + arr[x-2][y-1])
     if x + 2 < N:
         if y + 1 < M: 
             answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+2][y+1])
             answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+1][y+1] + arr[x+2][y+1])
-        if y - 1 >= 0:
+        if y >= 1:
             answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+2][y-1])
             answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+1][y-1] + arr[x+2][y-1])
-    if y - 2 >= 0:
+    if y >= 2:
         if x + 1 < N:
             answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x+1][y-2])
             answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x+1][y-1] + arr[x+1][y-2])
-        if x - 1 >= 0:    
+        if x >= 1:    
             answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x-1][y-2])
             answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x-1][y-1] + arr[x-1][y-2])
     if y + 2 < M:
         if x + 1 < N:
             answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x+1][y+2])
             answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x+1][y+1] + arr[x+1][y+2])
-        if x - 1 >= 0:    
+        if x >= 1:    
             answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x-1][y+2])   
             answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x-1][y+1] + arr[x-1][y+2])
-    ###
-     #
-    if x - 2 >= 0:
+    if x >= 2:
         if y + 1 < M:
             answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-1][y+1])
-        if y - 1 >= 0:
-            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-1][y-1])    
+        if y >= 1:
+            answer = max( answer, arr[x][y] + arr[x-1][y] + arr[x-2][y] + arr[x-1][y-1])
     if x + 3 < N:
         if y + 1 < M:
             answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+2][y+1])
-        if y - 1 >= 0:
-            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+2][y-1])    
-    if y - 3 >= 0:
-        if x - 1 >= 0:
+        if y >= 1:
+            answer = max( answer, arr[x][y] + arr[x+1][y] + arr[x+2][y] + arr[x+2][y-1])
+    if y >= 3:
+        if x >= 1:
             answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x-1][y-1])
         if x + 1 < N :  
-            answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x+1][y-1])   
+            answer = max( answer, arr[x][y] + arr[x][y-1] + arr[x][y-2] + arr[x+1][y-1])
     if y + 3 < M:
-        if x - 1>= 0:
-            answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x-1][y+1]) 
+        if x >= 1:
+            answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x-1][y+1])
         if x + 1 < N:   
             answer = max( answer, arr[x][y] + arr[x][y+1] + arr[x][y+2] + arr[x+1][y+1])  
     

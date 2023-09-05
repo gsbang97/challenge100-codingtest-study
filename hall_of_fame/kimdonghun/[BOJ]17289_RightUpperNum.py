@@ -4,9 +4,7 @@ N = int(sys.stdin.readline())
 N_list = list(map(int, sys.stdin.readline().split()))
 
 right_upper = [-1] * N
-s = []
-
-s.append(0)
+s = [0]
 
 for i in range(1, N):
     while s and N_list[s[-1]] < N_list[i]:

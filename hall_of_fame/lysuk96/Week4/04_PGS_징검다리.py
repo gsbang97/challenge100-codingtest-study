@@ -8,8 +8,8 @@ def solution(distance, rocks, n):
     left = 1
     right = distance
     answer = 0
-    
-    while left <= right :
+
+    while left <= right:
         mid = (left+right)//2
         # print('mid', mid)
         now = 0
@@ -20,11 +20,11 @@ def solution(distance, rocks, n):
                 # print(now)
             else:
                 eli_count+=1
-            
-        if eli_count > n :
+
+        if eli_count > n:
             right = mid - 1
-        elif eli_count <= n:
+        else:
             left = mid + 1
             answer = mid
-    
+
     return answer

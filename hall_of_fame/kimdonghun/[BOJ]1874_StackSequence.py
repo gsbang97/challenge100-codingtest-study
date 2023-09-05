@@ -7,7 +7,7 @@ stack_num = 0
 stack_seq = ""
 
 isValid = True
-for i in range(N):
+for _ in range(N):
     cur_num = int(sys.stdin.readline())
 
     while(cur_num > stack_num):

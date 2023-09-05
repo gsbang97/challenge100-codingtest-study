@@ -5,7 +5,7 @@ N, M, V = map(int, sys.stdin.readline().split())
 graph = [ [] for _ in range(N+1)]
 visited = [False] * (N+1)
 
-for i in range(M):
+for _ in range(M):
     V1, V2 = map(int, sys.stdin.readline().split())
     graph[V1].append(V2)
     graph[V2].append(V1)

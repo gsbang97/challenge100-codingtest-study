@@ -1,5 +1,3 @@
 for _ in range(int(input())):
-    answer = 0
-    for o in list(input().split('X')):
-        answer += len(o)*(len(o)+1)//2
+    answer = sum(len(o)*(len(o)+1)//2 for o in list(input().split('X')))
     print(answer)

@@ -3,21 +3,18 @@ from collections import deque
 
 input = sys.stdin.readline
 
-    
+
 
 
 m, n = map(int, input().split())
 
-graph = []
 q = deque([])
 res = 0
 
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
-for _ in range(n):
-    graph.append(list(map(int, input().split())))
-    
+graph = [list(map(int, input().split())) for _ in range(n)]
 for i in range(n):
     for j in range(m):
         if graph[i][j] == 1:

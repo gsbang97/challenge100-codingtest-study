@@ -3,10 +3,7 @@ import sys
 n = sys.stdin.readline().rstrip().split()
 
 n = list(map(int,n))
-inputData = []
-for i in range(n[0]):
-    inputData.append(list(sys.stdin.readline().rstrip()))
-
+inputData = [list(sys.stdin.readline().rstrip()) for _ in range(n[0])]
 answer = 1 << 31 - 1
 for i in range(n[0]-7):
     for j in range(n[1]-7):

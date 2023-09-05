@@ -14,10 +14,7 @@ def check(i,j,k):
         return (i*j)
     elif k == 3:
         #음수를 양수로 나눌 때는 C++14의 기준을 따른다.
-        if i<0:
-            return (-i//j)*-1
-        else:    
-            return (i//j)            
+        return (-i//j)*-1 if i<0 else (i//j)            
 
 def solve(depth,number):
 

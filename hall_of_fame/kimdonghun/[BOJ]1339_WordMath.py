@@ -1,12 +1,9 @@
 import sys
 
 N = int(sys.stdin.readline())
-word_list = []
 word_dict = {}
 
-for i in range(N):
-    word_list.append(sys.stdin.readline()[:-1])
-    
+word_list = [sys.stdin.readline()[:-1] for _ in range(N)]
 for word in word_list:
 
     digit_sqrt = len(word) - 1

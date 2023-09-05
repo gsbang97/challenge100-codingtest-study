@@ -28,10 +28,7 @@ class Deque():
         return len(self.q)
 
     def empty(self):
-        if self.size() == 0:
-            return 1
-        else:
-            return 0
+        return 1 if self.size() == 0 else 0
 
     def front(self):
         if self.empty():
@@ -45,7 +42,7 @@ class Deque():
         else:
             print(self.q[-1])
 
-for i in range(N):
+for _ in range(N):
     q = Deque()
 
     cmd_list = list(sys.stdin.readline().split())

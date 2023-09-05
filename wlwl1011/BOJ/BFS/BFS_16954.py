@@ -11,7 +11,7 @@ dy = [0,0,-1,1,-1,1,-1,1]
 arr = [[ ['.' for _ in range(8)] for _ in range(8) ] for _ in range(9)]
 visited = [[ [0 for _ in range(8)] for _ in range(8) ] for _ in range(9)]
 queue = deque()
-queue.append((7,0,0)) 
+queue.append((7,0,0))
 barrier = {}
 
 for i in range(8):
@@ -36,8 +36,8 @@ for i in range(9):
 #             print(arr[i][j][k], end='')
 #         print()
 #     print()        
-            
-    
+
+
 
 
 
@@ -61,9 +61,7 @@ while queue:
         print(1)
         exit()
     number += 1
-    if number > 8:
-        number = 8
-             
+    number = min(number, 8)
     for i in range(8):
         cx = x + dx[i]
         cy = y + dy[i]

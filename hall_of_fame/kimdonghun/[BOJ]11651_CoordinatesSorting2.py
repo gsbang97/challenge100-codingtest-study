@@ -18,7 +18,7 @@ N = int(sys.stdin.readline())
 
 n_list = []
 
-for i in range(N):
+for _ in range(N):
     x,y = map(int, sys.stdin.readline().split())
     n_list.append((x,y))
 

@@ -12,8 +12,7 @@ def fibonacchi(x):
 
 T = int(sys.stdin.readline())
 
-for i in range(T):
-
+for _ in range(T):
     N = int(sys.stdin.readline())
     fibonacchi(N)
     print(d_list_zero[N], d_list_one[N])

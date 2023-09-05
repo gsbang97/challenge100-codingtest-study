@@ -20,8 +20,8 @@ for _ in range(n):
         State = AUTOMATA[State][int(c)]
         if(State == '-'):
             break
-    
-    if State == 'S' or State == 'E' or State == 'F' :
+
+    if State in ['S', 'E', 'F']:
         print("YES")
-    else :
+    else:
         print("NO")

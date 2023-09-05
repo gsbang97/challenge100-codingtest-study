@@ -23,16 +23,16 @@ answer = sum(arr)//3
 queue = deque()
 arr.sort()
 queue.append(arr)
-dictionary = dict()
+dictionary = {}
 while queue:
-    
+
     isNotTrue = True
     arr = queue.popleft()
     if arr[0] == arr[1] == arr[2]:
         isNotTrue = False
         print(1)
         break
-        
+
     if arr[0] != arr[1]:
         x = arr[0]
         y = arr[1]

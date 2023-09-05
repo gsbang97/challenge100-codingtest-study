@@ -1,11 +1,10 @@
 import sys;
 
 def find(x):
-    if parent[x] == x :
+    if parent[x] == x:
         return x
-    else:
-        parent[x] = find(parent[x])
-        return parent[x]
+    parent[x] = find(parent[x])
+    return parent[x]
 
 def union(x,y):
     parentX = find(x)
@@ -21,7 +20,7 @@ def union(x,y):
 
 n, m = map(int, sys.stdin.readline().rstrip().split())
 
-parent = [i for i in range(n)]
+parent = list(range(n))
 
 ans = 0
 for i in range(m):

@@ -1,11 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-stairs =[]
-
-for i in range(N):
-    stairs.append(int(sys.stdin.readline()))
-
+stairs = [int(sys.stdin.readline()) for _ in range(N)]
 d = [0] * len(stairs)
 #print(stairs)
 

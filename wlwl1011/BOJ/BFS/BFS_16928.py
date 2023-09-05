@@ -16,8 +16,8 @@ board = [0] * 101
 visited = [False] * 101
 
 #사다리, 뱀 딕셔너리 선언
-ladder = dict()
-snake = dict()
+ladder = {}
+snake = {}
 
 #사다리 정보 입력 받기
 for _ in range(n):
@@ -45,10 +45,10 @@ while q:
         #맵을 벗어나지 않거나 아직 방문하지 않은 칸이라면
         if next_place <= 100 and not visited[next_place]:
             #이동할 위치에 사다리가 있다면
-            if next_place in ladder.keys():
+            if next_place in ladder:
                 next_place = ladder[next_place]
             #이동할 위치에 뱀이 있다면
-            if next_place in snake.keys():
+            if next_place in snake:
                 next_place = snake[next_place]
             #이동할 위치에 아무것도 없다면
             if not visited[next_place]:

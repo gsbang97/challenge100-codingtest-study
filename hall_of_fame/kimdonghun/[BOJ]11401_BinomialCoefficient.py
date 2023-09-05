@@ -6,13 +6,10 @@ P = 1000000007
 def my_pow(a, b):
     if b == 1:
         return a % P
-    
+
     tmp_res = my_pow(a, b // 2)
 
-    if b % 2 == 0:
-        return tmp_res * tmp_res % P
-    else:
-        return tmp_res * tmp_res * a % P
+    return tmp_res * tmp_res % P if b % 2 == 0 else tmp_res * tmp_res * a % P
 
 A = 1
 # n!

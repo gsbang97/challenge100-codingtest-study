@@ -7,10 +7,11 @@ for _ in range(m):
     dont_mix[a].append(b)
     dont_mix[b].append(a)
 
-cnt = 0
-for a, b, c in list(combinations(range(1, n+1), 3)):
-    if a not in dont_mix[b] and a not in dont_mix[c] and b not in dont_mix[c]:
-        cnt += 1
+cnt = sum(
+    1
+    for a, b, c in list(combinations(range(1, n + 1), 3))
+    if a not in dont_mix[b] and a not in dont_mix[c] and b not in dont_mix[c]
+)
 print(cnt)
 
 """

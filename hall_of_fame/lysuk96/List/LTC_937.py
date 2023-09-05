@@ -45,7 +45,7 @@ def reorderLogFiles(logs: List[str]) -> List[str]:
         else :
             let.append(data)
     print(dig,let)
-    ans = sorted(let, key= lambda x : x.split(" ")[0:])
+    ans = sorted(let, key=lambda x: x.split(" ")[:])
     ans = sorted(ans, key= lambda x : x.split(" ")[1:])
     ans += dig
     return ans

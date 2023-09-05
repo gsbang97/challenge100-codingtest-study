@@ -5,10 +5,7 @@ sys.stdout.write = lambda s: stdout.write(s.encode("ascii"))
 atexit.register(lambda: os.write(1, stdout.getvalue()))
 
 def check(i,j,k):
-    if k=='>':
-        return i>j
-    else:
-        return i<j    
+    return i>j if k=='>' else i<j    
 
 def solve(depth, s):
     global max_value

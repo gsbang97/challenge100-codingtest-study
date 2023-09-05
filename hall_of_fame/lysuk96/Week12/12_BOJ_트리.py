@@ -23,26 +23,26 @@ while True:
     n, m = map(int, input().split(" "))
     if n==m== 0:
         break
-    
+
     visit = [False]*(n+1)
     v = defaultdict(list)
     for _ in range(m):
         a, b = map(int, input().split(" "))
         v[a].append(b)
         v[b].append(a)
-    
+
     answer = 0
     for i in range(1, n+1):
         if not visit[i]:
             if (not is_cyclic(i)):
                 answer+=1
-    
+
     if answer == 0:
-        print('Case {}: No trees.'.format(case))
+        print(f'Case {case}: No trees.')
     elif answer == 1:
-        print('Case {}: There is one tree.'.format(case))
+        print(f'Case {case}: There is one tree.')
     else:
-        print('Case {}: A forest of {} trees.'.format(case, answer))
+        print(f'Case {case}: A forest of {answer} trees.')
 
 
 

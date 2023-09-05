@@ -16,10 +16,7 @@ class stack:
         return len(self.s) 
 
     def empty(self):
-        if(self.size() == 0):
-            return 1
-        else:
-            return 0
+        return 1 if (self.size() == 0) else 0
 
     def top(self):
         if(self.empty()):
@@ -30,7 +27,7 @@ class stack:
 N = int(sys.stdin.readline())
 s = stack()
 
-for i in range(N):
+for _ in range(N):
     cmd_list = list(sys.stdin.readline().split())
 
     if cmd_list[0] == "push":

@@ -27,11 +27,7 @@ else:
         if cnt == K - 5:
             readcnt = 0
             for word in words:
-                check = True
-                for w in word:
-                    if not learn[ord(w) - ord('a')]:
-                        check = False
-                        break
+                check = all(learn[ord(w) - ord('a')] for w in word)
                 if check:
                     readcnt += 1
             answer = max(answer, readcnt)

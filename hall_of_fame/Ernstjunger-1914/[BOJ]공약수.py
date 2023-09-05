@@ -1,9 +1,7 @@
 import sys
 
 def gcd(x, y):
-  if(x==0) :
-    return y
-  return gcd(y%x, x)
+  return y if (x==0) else gcd(y%x, x)
 
 def main():
   n=int(sys.stdin.readline())

@@ -25,11 +25,11 @@ def bfs(graph, x, y):
                 graph[ny][nx] = 0
                 q.append((nx, ny))
                 
-for i in range(T):
+for _ in range(T):
     M, N, K = map(int, sys.stdin.readline().split())
     graph = [[0 for _ in range(M)] for _ in range(N)]
-    
-    for j in range(K):
+
+    for _ in range(K):
         X, Y = map(int, sys.stdin.readline().split())
 
         graph[Y][X] = 1

@@ -13,7 +13,7 @@ queue = deque()
 #(현재 이모티콘의 개수, 클립보드에 있는 개수)
 queue.append((1,0))
 
-visited = dict()
+visited = {}
 visited[(1,0)] = 0
 
 #너비 우선 탐색
@@ -35,6 +35,6 @@ while queue:
         visited[(now + clip, clip)] = visited[(now, clip)] + 1
         queue.append((now+clip,clip))
     #화면에 있는거 하나 삭제하기
-    if now-1 > 0 and (now-1, clip) not in visited.keys():
+    if now > 1 and (now - 1, clip) not in visited.keys():
         visited[(now-1, clip)] = visited[(now, clip)] + 1
         queue.append((now-1, clip))        

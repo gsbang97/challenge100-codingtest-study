@@ -8,10 +8,7 @@ def addFish():
             if row[i] == m: row[i] += 1
 
 def cw(arr):
-    rotated = []
-    for row in list(map(list, zip(*arr[::-1]))):
-        rotated.append(row)
-    return rotated
+    return list(list(map(list, zip(*arr[::-1]))))
 
 def roll():
     global bowls
@@ -50,8 +47,7 @@ def flatten():
     global bowls
     flattened = []
     for row in bowls:
-        for x in row:
-            flattened.append([x])
+        flattened.extend([x] for x in row)
     bowls = flattened
 
 def fold():

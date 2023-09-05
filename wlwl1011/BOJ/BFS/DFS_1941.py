@@ -31,10 +31,7 @@ def bfs(arr):
                 visited[nr][nc] = 1  # 그위치를 1로 바꿔주고
                 check += 1  # 방문 횟수를 1 증가
                 queue.append((nr, nc))  # 큐에 추가
-    if check != 7:  # 7번다 방문하지 않았다면
-        return False
-    else:  # 7번 방문했다면
-        return True
+    return check == 7
 
 
 def dfs(depth, start, count):

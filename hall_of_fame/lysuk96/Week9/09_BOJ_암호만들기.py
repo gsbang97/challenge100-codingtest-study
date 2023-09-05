@@ -6,9 +6,7 @@ def jamo_check(answer):
         if a in "aeiou":
             mo.append(a)
         else: ja.append(a)
-    if len(mo)>= 1 and len(ja) >= 2:
-        return True
-    return False
+    return bool(mo and len(ja) >= 2)
 
 
 def dfs(idx, depth):

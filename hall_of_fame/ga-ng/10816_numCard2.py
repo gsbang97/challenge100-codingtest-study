@@ -4,9 +4,7 @@ from bisect import bisect_left, bisect_right
 input = sys.stdin.readline
 
 n = int(input())
-nArr = list(map(int, input().split()))
-nArr.sort()
-
+nArr = sorted(map(int, input().split()))
 m = int(input())
 mArr = list(map(int, input().split()))
 

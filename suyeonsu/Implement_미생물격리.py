@@ -14,6 +14,7 @@ m시간 후 남아있는 미생물수의 총합을 구하라
         해당 군집 정보에서 방향을 반대로 바꿔서 저장함
         미생물수 /= 2
 """
+
 dir = {1:(-1, 0), 2:(1, 0), 3:(0, -1), 4:(0, 1)}
 
 T = int(input())
@@ -52,11 +53,7 @@ for t in range(1, T+1):
                 info[i] = [nx, ny, info[i][2]//2, nd]
             else:
                 info[i][0], info[i][1] = nx, ny
-        tmp = []
-        for i in nxt.values():
-            tmp.append(info[i])
+        tmp = [info[i] for i in nxt.values()]
         info = tmp
-    answer = 0
-    for x, y, cnt, d in info:
-        answer += cnt
+    answer = sum(cnt for x, y, cnt, d in info)
     print(f'#{t} {answer}')

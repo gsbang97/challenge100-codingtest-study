@@ -8,10 +8,10 @@ ans = 0
 row = [0] * n
 
 def is_promising(x):
-    for i in range(x):
-        if row[x] == row[i] or abs(row[x] - row[i]) == abs(x - i):
-            return False
-    return True
+    return not any(
+        row[x] == row[i] or abs(row[x] - row[i]) == abs(x - i)
+        for i in range(x)
+    )
 
 def n_queens(x):
     global ans

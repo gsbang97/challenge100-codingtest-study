@@ -22,9 +22,7 @@ for _ in range(Test):
         result[I-1][J-1] = max(result[I-1][J-1],S) #문제 최대값 여기 
         count[I-1] += 1 #제출 횟수
         time[I-1] = t
-    new = []
-    for idx in range(N):
-        new.append([sum(result[idx]),count[idx],time[idx],idx])
+    new = [[sum(result[idx]),count[idx],time[idx],idx] for idx in range(N)]
     new.sort(key = lambda x : (-x[0],x[1],x[2]))
     for idx in range(N):
         if new[idx][3] == T-1:

@@ -1,9 +1,7 @@
 # [방법1] 정렬 -> 효율성 테스트 결과가 [방법2]보다 좋았음
 def solution(phone_book):
     phone_book.sort()
-    for a, b in zip(phone_book, phone_book[1:]):
-        if b.startswith(a): return False
-    return True
+    return not any(b.startswith(a) for a, b in zip(phone_book, phone_book[1:]))
 
   
 # [방법2] Hash

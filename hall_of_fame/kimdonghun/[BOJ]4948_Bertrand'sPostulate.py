@@ -1,7 +1,7 @@
 import sys
 
 max_range_n = 123456
-plist = [True for i in range(2*max_range_n + 1)]
+plist = [True for _ in range(2*max_range_n + 1)]
 plist[1] = False
 
 for cur_num in range(2, max_range_n+1) :
@@ -14,17 +14,11 @@ for cur_num in range(2, max_range_n+1) :
 
 N = int(sys.stdin.readline())
 
-while True :    
-    prime_cnt = 0
+while True:    
+        prime_cnt = sum(1 for i in range(N+1, 2*N + 1) if plist[i] == True)
+        print(prime_cnt)
 
-    #print(plist)
-    for i in range(N+1, 2*N + 1) :
-        if plist[i] == True:
-            prime_cnt += 1
+        N = int(sys.stdin.readline())
 
-    print(prime_cnt)
-
-    N = int(sys.stdin.readline())
-
-    if N == 0 :
-        break
+        if N == 0 :
+            break

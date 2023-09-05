@@ -4,7 +4,7 @@
 
 N = int(input())
 candidate = []
-for i in range(N):
+for _ in range(N):
     start, end = input().split(" ")
     candidate.append((int(start), int(end)))
 

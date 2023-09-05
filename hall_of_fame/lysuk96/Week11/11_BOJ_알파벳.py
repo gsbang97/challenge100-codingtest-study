@@ -10,7 +10,7 @@ R, C = map(int, input().split(" "))
 board = [list(input()) for _ in range(R)]
 # board = [list(map(ord,list(input()))) for _ in range(R)]
 # visit = [False]*26 # -65한 값이 idx -> 사실 필요없음!
-q = set([(0,0,board[0][0])]) # x,y,m
+q = {(0,0,board[0][0])}
 
 # print(*board, sep='\n')
 move = [(0,1),(1,0),(-1,0),(0,-1)]

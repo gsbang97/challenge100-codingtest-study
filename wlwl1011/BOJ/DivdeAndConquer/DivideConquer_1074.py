@@ -20,13 +20,11 @@ while N != 0:
     if r < 2 ** N and c < 2 ** N:
         answer += (2**N) * (2**N) * 0
 
-    #2사분면
-    elif r < 2 ** N and c >= 2 ** N :
+    elif r < 2**N:
         answer += ( 2 ** N ) * ( 2 ** N ) * 1
         c -= ( 2 ** N )
 
-    #3사분면
-    elif r >= 2 ** N and c < 2 ** N: 
+    elif c < 2**N: 
         answer += ( 2 ** N ) * ( 2 ** N ) * 2
         r -= ( 2**N)
     else:

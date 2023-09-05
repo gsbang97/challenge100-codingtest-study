@@ -16,26 +16,22 @@ while m > 0:
     x, y = input().split()
     x = int(x)
     y = int(y)
-    dfs_node[int(x)].append(int(y))
-    dfs_node[int(y)].append(int(x))
-    bfs_node[int(x)].append(int(y))
-    bfs_node[int(y)].append(int(x))
+    dfs_node[x].append(y)
+    dfs_node[y].append(x)
+    bfs_node[x].append(y)
+    bfs_node[y].append(x)
     m -= 1
 
 for i in range(1001):
     dfs_node[i].sort()
     bfs_node[i].sort()
 
-# DFS
-stack = []
-
 dfs_vis[sn] = True
 
-stack.append(sn)
-
+stack = [sn]
 print(sn, end=" ")
 
-while len(stack) > 0:
+while stack:
     cur = stack[-1]
 
     if len(dfs_node[cur]) == 0:
@@ -57,13 +53,10 @@ while len(stack) > 0:
 
 print()
 
-# BFS
-queue = []
 bfs_vis[sn] = True
 
-queue.append(sn)
-
-while len(queue) > 0:
+queue = [sn]
+while queue:
     cur = queue[0]
     queue.pop(0)
 

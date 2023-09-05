@@ -10,11 +10,10 @@ def solution(fees, records):
 
     def charge(m):
         dm, df, per, perf = fees
-        if m <= dm: return df
-        return df + ceil((m-dm) / per) * perf
-    
-    cars = dict()
-    times = dict()
+        return df if m <= dm else df + ceil((m-dm) / per) * perf
+
+    cars = {}
+    times = {}
     for r in records:
         t, num, st = r.split()
         if st == 'IN':
@@ -31,7 +30,7 @@ def solution(fees, records):
 
     answer = [(c, charge(t)) for c, t in times.items()]
     answer.sort()
-    
+
     return [fee for c, fee in answer]
 
 # 어떤 자료형을 쓸지, 그리고 주어진 레코드를 어떻게 처리해야 깔끔한지 고민하느라 시간이 좀 걸렸다.

@@ -27,10 +27,10 @@ arr = dict(sorted(arr.items(),key = lambda x: len(x[0]), reverse=True))
 # for key, value in arr.items():
 #     print(key,value)  
 
-arr = dict(sorted(arr.items(), key = lambda x: x[1], reverse=True))   
+arr = dict(sorted(arr.items(), key = lambda x: x[1], reverse=True))
 # print(1)    
 # for key, value in arr.items():
 #     print(key,value)  
 
-for key, value in arr.items():
+for key in arr:
     print(key)

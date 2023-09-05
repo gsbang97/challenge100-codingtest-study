@@ -20,7 +20,7 @@ for _ in range(k):
     for num, dir in enumerate(direction):
         wheel[num].rotate(dir)
 
-answer = 0
-for i, s in zip(range(4), [1, 2, 4, 8]):
-    answer += s if wheel[i][0] == 1 else 0
+answer = sum(
+    s if wheel[i][0] == 1 else 0 for i, s in zip(range(4), [1, 2, 4, 8])
+)
 print(answer)

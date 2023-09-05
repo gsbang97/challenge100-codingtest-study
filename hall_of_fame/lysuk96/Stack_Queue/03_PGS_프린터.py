@@ -2,8 +2,8 @@
 from collections import deque
 def solution(priorities, location):
 
-    Q = deque([i for i in range(len(priorities))])
-    
+    Q = deque(list(range(len(priorities))))
+
     answer = 1
     while Q :
         if max(priorities) != priorities[Q[0]]:

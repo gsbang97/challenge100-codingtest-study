@@ -40,13 +40,8 @@ def solution(n, k, cmd):
                 x.pre.nxt = x
             if x.nxt:
                 x.nxt.pre = x
-    
-    answer = ''
-    for i in range(n):
-        if linkedList[i].removed: answer += 'X'
-        else: answer += 'O'
-    
-    return answer
+
+    return ''.join('X' if linkedList[i].removed else 'O' for i in range(n))
   
 """
 이 코드에서 핵심은

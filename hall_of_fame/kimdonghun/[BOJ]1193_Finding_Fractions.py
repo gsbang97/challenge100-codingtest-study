@@ -21,4 +21,4 @@ while 1 :
 
     i += 1
 
-print(str(numerator) + '/' + str(denominator))        
+print(f'{str(numerator)}/{str(denominator)}')        

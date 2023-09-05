@@ -3,7 +3,7 @@ import sys
 N = int(sys.stdin.readline())
 tot_list = []
 
-for n in range(N):
+for _ in range(N):
     cur_list = list(map(int,sys.stdin.readline().split()))
     tot_list.append(cur_list)
 

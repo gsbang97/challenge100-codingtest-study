@@ -4,14 +4,7 @@ A,B,C = map(int, sys.stdin.readline().split())
 #print(A,B,C)
 
 same_num = 0
-if A == B:
-    same_num = A
-
-    if A == C:
-        print(10000 + same_num * 1000)
-    else:
-        print(1000 + same_num * 100)
-elif A == C:
+if A in [B, C]:
     same_num = A
 
     print(1000 + same_num * 100)

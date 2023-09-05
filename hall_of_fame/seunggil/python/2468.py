@@ -5,15 +5,13 @@ near = [(1,0),(-1,0),(0,1),(0,-1)]
 
 n = int(input())
 
-inputData = []
-
-for _ in range(n):
-    inputData.append(list(map(int,sys.stdin.readline().rstrip().split())))
-
+inputData = [
+    list(map(int, sys.stdin.readline().rstrip().split())) for _ in range(n)
+]
 answer = 0
 for height in range(101):
-    local = [[True if inputData[a][b] > height else False for b in range(n)] for a in range(n)]
-    
+    local = [[inputData[a][b] > height for b in range(n)] for a in range(n)]
+
     ans = 0
     dfs = deque()
     for a in range(n):

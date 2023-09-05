@@ -18,16 +18,14 @@ class Solution:
 
             if mid == left or mid == right or left == right:
                 break
-                
+
             if nums[mid] > nums[right]:
                 left = mid + 1
-                mid = (right + left)//2
             else:
                 right = mid - 1
-                mid = (right + left)//2
+            mid = (right + left)//2
+                # print(nums[left], nums[mid], nums[right])
 
-            # print(nums[left], nums[mid], nums[right])
+                
 
-            
-        
         return ans

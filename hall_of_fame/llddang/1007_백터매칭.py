@@ -20,13 +20,12 @@ def main():
     answer = []
     while T != 0:
         n = int(input())
-        li = []
         tmp1 = [0, 0]
-        li.append(tmp1)
-        for i in range(n):
+        li = [tmp1]
+        for _ in range(n):
             tmp = [int(x) for x in input().split()]
             li.append(tmp)
-        
+
         subAnswer = solution(li, 0, n/2, n/2, 0, 0)
 
         answer.append(math.sqrt(subAnswer))

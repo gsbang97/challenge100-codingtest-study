@@ -19,10 +19,11 @@ class Solution:
         return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
     def findSub(self, r, s):
-        if not r and not s:
+        if r or s:
+            return (
+                self.findSub(r.left, s.left) and self.findSub(r.right, s.right)
+                if r and s and r.val == s.val
+                else False
+            )
+        else:
             return True
-
-        if r and s and r.val == s.val:
-            return self.findSub(r.left, s.left) and self.findSub(r.right, s.right)
-
-        return False

@@ -18,10 +18,7 @@ class Queue():
         return len(self.q)
 
     def empty(self):
-        if self.size() == 0:
-            return 1
-        else:
-            return 0
+        return 1 if self.size() == 0 else 0
     
     def front(self):
         if self.empty():
@@ -40,7 +37,7 @@ N = int(sys.stdin.readline())
 cmd_list = []
 q = Queue()
 
-for i in range(N):
+for _ in range(N):
     cmd_list = list(sys.stdin.readline().split())
     #print(cmd_list)
 

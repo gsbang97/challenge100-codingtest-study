@@ -2,17 +2,10 @@ import sys
 import heapq
 
 N = int(sys.stdin.readline())
-card = []
-
-for i in range(N):
-    card.append(int(sys.stdin.readline()))
-
+card = [int(sys.stdin.readline()) for _ in range(N)]
 card.sort()
 
-pq = []
-for c in card:
-    pq.append(c)
-
+pq = list(card)
 sum = 0
 cmp_cnt = 0
 while len(pq) > 1:

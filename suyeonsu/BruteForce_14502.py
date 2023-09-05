@@ -13,18 +13,16 @@ idx = [(i, j) for i in range(n) for j in range(m) if _board[i][j] == 0]
 
 answer = 0
 for w1, w2, w3 in combinations(idx, 3):
-    board = list(_board[i].copy() for i in range(n))
+    board = [_board[i].copy() for i in range(n)]
     board[w1[0]][w1[1]] = 1
     board[w2[0]][w2[1]] = 1
     board[w3[0]][w3[1]] = 1
 
-    safezone = 0
     for i in range(n):
         for j in range(m):
             if board[i][j] == 2:
                 dfs(i, j)
-    for i in range(n):
-        safezone += board[i].count(0)
+    safezone = sum(board[i].count(0) for i in range(n))
     answer = max(answer, safezone)
 
 print(answer)

@@ -82,10 +82,6 @@ class Solution:
         ############
         ## Remain ##
         ############
-        if not list1:
-            temp.next = list2
-        else:
-            temp.next = list1
-
+        temp.next = list2 if not list1 else list1
         head = ans.next
 

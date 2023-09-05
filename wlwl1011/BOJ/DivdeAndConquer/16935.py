@@ -9,9 +9,9 @@ atexit.register(lambda: os.write(1, stdout.getvalue()))
 N, M, R = map(int, input().split())
 
 
-arr = [ [0 for i in range(M)] for i in range(N)]   
+arr = [[0 for _ in range(M)] for _ in range(N)]   
 
-cal = [ 0 for i in range(R)]
+cal = [0 for _ in range(R)]
 
 
 
@@ -22,12 +22,9 @@ cal = list(map(int, input().split()))
 
 for index in cal:
 
-    if index == 3 or index == 4:
-        temp = N
-        N = M
-        M = temp    
-
-    new_arr = [ [ 0 for i in range(M)] for i in range(N)]
+    if index in [3, 4]:
+        N, M = M, N
+    new_arr = [[0 for _ in range(M)] for _ in range(N)]
     #상하
     if index == 1:
         for i in range(N):
@@ -64,7 +61,7 @@ for index in cal:
         for i in range(N//2,N):
             for j in range(M//2,M):      
                 new_arr[i][j] = arr[i-(N//2)][j]          
-                        
+
 
     #반시계방향
     elif index == 6:
@@ -81,7 +78,7 @@ for index in cal:
 
         for i in range(N//2,N):
             for j in range(M//2,M):      
-                new_arr[i][j] = arr[i][j-(M//2)]    
+                new_arr[i][j] = arr[i][j-(M//2)]
     #갱신
     arr = copy.deepcopy(new_arr)     
 

@@ -6,11 +6,8 @@ answer = 0
 
 
 def checkCount(comb):
-    cnt = 0
-    for x, y in comb:
-        if board[x][y] == 'S':
-            cnt += 1
-    return True if cnt >= 4 else False
+    cnt = sum(1 for x, y in comb if board[x][y] == 'S')
+    return cnt >= 4
 
 
 def checkAdj(comb):
@@ -27,7 +24,7 @@ def checkAdj(comb):
             if (nx, ny) in comb and not visited[comb.index((nx, ny))]:
                 dq.append((nx, ny))
                 visited[comb.index((nx, ny))] = 1
-    return True if sum(visited) == 7 else False
+    return sum(visited) == 7
 
 
 for comb in list(combinations([(i, j) for i in range(5) for j in range(5)], 7)):

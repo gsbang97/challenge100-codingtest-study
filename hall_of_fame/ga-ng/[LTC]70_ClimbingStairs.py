@@ -7,7 +7,7 @@ class Solution:
 
         n1, n2 = 2, 3
 
-        for i in range(4, n + 1):
+        for _ in range(4, n + 1):
             temp = n1 + n2
             n1 = n2
             n2 = temp

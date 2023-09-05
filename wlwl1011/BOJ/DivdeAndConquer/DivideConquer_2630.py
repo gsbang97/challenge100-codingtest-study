@@ -36,10 +36,10 @@ def divideAndConquer(x,y,n):
         divideAndConquer(x+n,y+n,n)
 
 N = int(input())
-arr = [ [ 0 for i in range(N)] for i in range(N)]
+arr = [[0 for _ in range(N)] for _ in range(N)]
 for i in range(N):
     arr[i] = list(map(int, input().split()))
 
-divideAndConquer(0,0,N)                    
+divideAndConquer(0,0,N)
 print(white)
 print(blue)                      

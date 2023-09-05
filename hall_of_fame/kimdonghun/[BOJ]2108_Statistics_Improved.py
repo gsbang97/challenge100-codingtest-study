@@ -6,10 +6,10 @@ N = int(sys.stdin.readline())
 s_list = []
 m_list = {}
 
-for i in range(N):
+for _ in range(N):
     cur_num = int(sys.stdin.readline())
     s_list.append(cur_num)
-    
+
 cnt = 0
 
 s_list.sort()
@@ -30,7 +30,7 @@ most_val = s_list[0]
 for i in range(len(m_sort)):
     if most_cnt < m_sort[i][1]:
         most_cnt = m_sort[i][1]
-        
+
         if i+1 < len(m_sort) and m_sort[i+1][1] == m_sort[i][1]:
             most_val = m_sort[i+1][0]
         else:

@@ -10,6 +10,6 @@ def solution(n):
 # 변수를 2개만 사용해서 더 효율성을 높일 수 있었다! 매우매우 깔끔
 def solution(n):
     a, b = 1, 1
-    for i in range(n-1):
+    for _ in range(n-1):
         a, b = b, (a+b) % 1000000007
     return b

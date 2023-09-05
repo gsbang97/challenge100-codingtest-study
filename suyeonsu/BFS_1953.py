@@ -16,7 +16,7 @@ for t in range(1, T+1):
 
     dq = deque([(1, r, c, board[r][c])])
     visited[r][c] = 1
-    answer = set([(r, c)])
+    answer = {(r, c)}
     while dq:
         lev, x, y, state = dq.popleft()
         if lev == l: break

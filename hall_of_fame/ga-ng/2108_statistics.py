@@ -8,13 +8,13 @@ n = int(input())
 numl = []
 
 sumAll = 0
-for i in range(n):
+for _ in range(n):
     temp = int(input())
     numl.append(temp)
     sumAll += temp
 
 numl.sort()
-    
+
 
 print(round(sumAll/n))
 print(numl[n//2])

@@ -4,12 +4,11 @@ from bisect import insort
 T = int(input())
 for _ in range(T):
     M = int(input())
-    nums = []
     q = deque([])
     for _ in range(M//10+1):
         q.extend(list(map(int, input().split(" "))))
 
-    nums.append(q.popleft()) #initialize
+    nums = [q.popleft()]
     n = 1
     answer = [nums[0]]
     while q:

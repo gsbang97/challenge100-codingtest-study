@@ -9,7 +9,7 @@ class Solution:
         def vaild(node, left, right):
             if not node:
                 return True
-            if not (node.val < right and node.val > left):
+            if node.val >= right or node.val <= left:
                 return False
 
             return vaild(node.left, left, node.val) and vaild(node.right, node.val, right)

@@ -5,7 +5,7 @@ n = int(input())
 a = [int(input()) for _ in range(n)]
 idx = n
 answer = 0
-for i in range(n-1, -1, -1):
+for i in range(idx - 1, -1, -1):
     if a[i] != idx:
         answer += 1
     else:

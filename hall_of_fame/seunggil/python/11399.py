@@ -1,9 +1,7 @@
 import sys
 n = int(input())
 
-inputData = list(map(int, sys.stdin.readline().rstrip().split()))
-inputData.sort()
-
+inputData = sorted(map(int, sys.stdin.readline().rstrip().split()))
 ans = 0
 nowTime = 0
 

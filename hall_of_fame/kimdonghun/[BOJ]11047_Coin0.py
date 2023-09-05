@@ -3,7 +3,7 @@ import sys
 N, K = map(int, sys.stdin.readline().split())
 coin_l = []
 
-for i in range(N):
+for _ in range(N):
     coin_n = int(sys.stdin.readline())
     coin_l.append(coin_n)
 
