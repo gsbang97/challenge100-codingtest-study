@@ -14,14 +14,9 @@ def isComplete(visited,virus):
         for j in range(N):
             if arr[i][j] == 1:
                 continue
-            else:    
-                if visited[i][j]:
-                    continue
-                elif (i,j) in virus:
-                    continue
-                else:
-                    return False    
-       
+            if not visited[i][j] and (i, j) not in virus:
+                return False    
+
     return True                
 
 
@@ -30,10 +25,7 @@ arr = [ [0 for _ in range(N)] for _ in range(N)]
 virus = []
 for i in range(N):
     arr[i] = list(map(int, input().split()))
-    for j in range(N):
-        if arr[i][j] == 2:
-            virus.append((i,j))
-
+    virus.extend((i, j) for j in range(N) if arr[i][j] == 2)
 virus_list = list(combinations(virus,M))   
 
 #print(virus_list)
@@ -45,7 +37,7 @@ for virus in virus_list:
     visited = [ [0 for _ in range(N)] for _ in range(N)]
     for i in virus:
         queue.append(i)
-    
+
     time = 0
     while queue:
         # print()

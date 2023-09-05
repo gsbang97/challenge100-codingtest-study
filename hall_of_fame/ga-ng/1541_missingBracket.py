@@ -4,11 +4,8 @@ equation = input().split('-')
 num = []
 
 for i in equation:
-    temp = 0
     s = i.split('+')
-    for j in s:
-        temp += int(j)
-        
+    temp = sum(int(j) for j in s)
     num.append(temp)
 
 ans = num[0]*2

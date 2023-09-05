@@ -4,7 +4,7 @@ K = int(sys.stdin.readline())
 
 s = []
 
-for i in range(K):
+for _ in range(K):
     num = int(sys.stdin.readline())
 
     if num == 0:

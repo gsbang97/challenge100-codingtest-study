@@ -2,7 +2,7 @@ import sys
 
 T = int(sys.stdin.readline())
 
-for i in range(T):
+for _ in range(T):
     p_list = list(sys.stdin.readline()[:-1])
     #print(p_list)
 
@@ -11,16 +11,15 @@ for i in range(T):
     for p in p_list:
         if p == '(':
             s.append('(')
+        elif s:
+            s.pop()
         else:
-            if len(s) > 0:
-                s.pop()
-            else:
-                isVPS = False
-    
+            isVPS = False
+
     #print(s)
     #print(isVPS)
 
-    if len(s) > 0 or isVPS == False:
+    if s or isVPS == False:
         print("NO")
     else:
         print("YES")

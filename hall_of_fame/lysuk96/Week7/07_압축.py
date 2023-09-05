@@ -4,7 +4,7 @@ import string
 def solution(msg):
     answer = []
 
-    alphabet = [x for x in string.ascii_letters[26:]]
+    alphabet = list(string.ascii_letters[26:])
     dic = defaultdict(int)
     for i in range(26):
         dic[alphabet[i]] = i+1

@@ -3,7 +3,7 @@ import sys
 
 T = int(sys.stdin.readline())
 
-for i in range(T):
+for _ in range(T):
     N, M = map(int, sys.stdin.readline().split())
     q = deque(list(map(int, sys.stdin.readline().split())))
     prior_l = deque(list(range(N)))

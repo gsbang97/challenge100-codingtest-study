@@ -29,12 +29,12 @@ graph = [[] for _ in range(n+1)]
 visited = [0 for _ in range(n+1)]
 cnt = 1
 
-for i in range(m):
+for _ in range(m):
     a,b = map(int, input().split())
-    
+
     graph[a].append(b)
     graph[b].append(a)
-    
+
 
 bfs(r)
 

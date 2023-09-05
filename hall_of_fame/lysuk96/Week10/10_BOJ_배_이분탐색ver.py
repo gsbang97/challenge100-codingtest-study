@@ -8,7 +8,7 @@ def bisect_left(l, a):
         if l[mid] < a:
             # result = mid
             left = mid+1
-        elif l[mid] >= a:
+        else:
             right = mid
     return left
 
@@ -21,7 +21,7 @@ def bisect_right(l, a):
         if l[mid] <= a:
             # result = mid
             left = mid+1
-        elif l[mid] > a:
+        else:
             right = mid
     return left
 

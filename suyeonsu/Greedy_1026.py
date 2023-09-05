@@ -4,7 +4,5 @@ B = list(map(int, input().split()))
 
 A.sort(reverse=True)
 B.sort()
-answer = 0
-for a, b in zip(A, B):
-    answer += a*b
+answer = sum(a*b for a, b in zip(A, B))
 print(answer)

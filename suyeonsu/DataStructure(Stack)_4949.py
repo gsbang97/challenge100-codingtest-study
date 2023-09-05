@@ -3,7 +3,7 @@ while True:
     if s == '.': break
     st = []
     for x in s:
-        if x == '(' or x == '[': st.append(x)
+        if x in ['(', '[']: st.append(x)
         elif x == ')':
             if st and st[-1] == '(': st.pop()
             else: break

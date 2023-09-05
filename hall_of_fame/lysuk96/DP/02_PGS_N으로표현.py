@@ -7,8 +7,7 @@ def solution(N, number):
         for j in range(1, i):
             for k in dp[j]:
                 for l in dp[i -j]:
-                    tmp.append(k+l)
-                    tmp.append(k*l)
+                    tmp.extend((k+l, k*l))
                     if l != 0:
                         tmp.append(k//l)
                     if k - l>0:

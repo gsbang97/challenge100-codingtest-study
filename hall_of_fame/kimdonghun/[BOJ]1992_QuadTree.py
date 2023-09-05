@@ -1,10 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-quad_l = []
-
-for i in range(N):
-    quad_l.append(list(sys.stdin.readline()[:-1]))
+quad_l = [list(sys.stdin.readline()[:-1]) for _ in range(N)]
 
 def solution(N,r,c):
     global quad_l

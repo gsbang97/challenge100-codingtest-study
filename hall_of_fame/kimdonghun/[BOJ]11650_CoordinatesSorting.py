@@ -17,7 +17,7 @@ def compare(a, b):
 N = int(sys.stdin.readline())
 sort_l = []
 
-for i in range(N):
+for _ in range(N):
     x, y = map(int, sys.stdin.readline().split())
     sort_l.append((x,y))
 

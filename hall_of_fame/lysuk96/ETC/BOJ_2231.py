@@ -25,10 +25,10 @@ def divide_sum(M):
 
 N = int(input())
 for i in range(N//10, N+1):
-    if divide_sum(i) == N:
-        print(i)
-        exit(0)
-    else: continue
+    if divide_sum(i) != N:
+        continue
+    print(i)
+    exit(0)
 print(0)
 
 #주의 : bound error 조심, 없을 시 0 출력

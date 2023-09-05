@@ -8,7 +8,7 @@ s = 0
 answer = 0
 for i in a:
     s += i
-    if s-k in prefix.keys():
+    if s - k in prefix:
         answer += prefix[s-k]
     prefix[s] += 1
 print(answer)

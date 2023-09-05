@@ -4,7 +4,7 @@
 
 def solution(n, costs):
     costs.sort(key = lambda x:x[2])
-    check = set([costs[0][0]])
+    check = {costs[0][0]}
     # print(check)
     answer = 0
     while len(check)!=n:

@@ -6,11 +6,7 @@ atexit.register(lambda : os.write(1, stdout.getvalue()))
 
 N = int(input())
 
-arr = []
-
-for i in range(N):
-    arr.append(list(map(int, input().split())))
-
+arr = [list(map(int, input().split())) for _ in range(N)]
 # for i in range(N):
 #     print(arr[i])
 

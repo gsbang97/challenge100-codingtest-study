@@ -8,18 +8,18 @@ def solution(numbers):
             if num % i == 0:
                 return False
         return True
-    
+
     perms = set([])
     for i in range(1, len(numbers)+1):
-        tmp = set([''.join(p) for p in permutations(numbers, i)])
+        tmp = {''.join(p) for p in permutations(numbers, i)}
         tmp = set(map(int, tmp))
         perms |= tmp
-    
+
     perms -= {0,1}
-    print(perms) 
+    print(perms)
     answer = 0
     for num in perms:
         if is_prime(num):
             answer+=1
-        
+
     return answer

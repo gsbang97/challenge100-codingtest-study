@@ -17,10 +17,8 @@ for _ in range(n-1):
     inputData[b].add(a)
 
 inputData[1].parent = 0
-dfs = []
-dfs.append(1)
-
-while len(dfs) > 0:
+dfs = [1]
+while dfs:
     now = dfs.pop()
     for i in inputData[now].connect :
         if i is not None and inputData[i].parent == -1:

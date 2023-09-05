@@ -6,19 +6,16 @@ def draw(a):
 
 #grid 함수
 def grid(a,b):
-    return [['-' for i in range(a)] for j in range(b)]
+    return [['-' for _ in range(a)] for _ in range(b)]
 
 #오목판 크기 n
-n = int(3)
-grid = [['-' for i in range(n)] for j in range(n)]
+n = 3
+grid = [['-' for _ in range(n)] for _ in range(n)]
 dr = draw(grid)
 round = 0
 status = 'playing'
 while status == 'playing':
-    if round % 2 == 0:
-        player = 'X'
-    else:
-        player = 'O'
+    player = 'X' if round % 2 == 0 else 'O'
     print(f"{player}의 턴입니다.")
     row = int(input(f"행 번호를 선택하세요 (1-{n}): "))
     col = int(input(f"열 번호를 선택하세요 (1-{n}): "))
@@ -31,15 +28,10 @@ while status == 'playing':
     b = list(np.diag(grid).T)
     c = list(np.repeat(player,n))
     for i in range(n):
-        if (grid[i][:] == c) or (grid[:][i] == c):
-            print(f"{player}가 이겼습니다!")
-            #while문 끝내기위한 상태 설정
-            status = 'end'
-            break
-        else:
-            if a == c or b == c:
-                print(f"{player}가 이겼습니다!")
-                status = 'end'
-                break
-            else:
+        if grid[i][:] != c and grid[:][i] != c:
+            if a != c and b != c:
                 continue
+        #while문 끝내기위한 상태 설정
+        status = 'end'
+        print(f"{player}가 이겼습니다!")
+        break

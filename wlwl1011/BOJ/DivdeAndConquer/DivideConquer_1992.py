@@ -8,7 +8,7 @@ atexit.register(lambda: os.write(1, stdout.getvalue()))
 
 N = int(input())
 
-board = [[ 0 for i in range(N) ] for i in range(N)]
+board = [[0 for _ in range(N)] for _ in range(N)]
 
 
 for i in range(N):

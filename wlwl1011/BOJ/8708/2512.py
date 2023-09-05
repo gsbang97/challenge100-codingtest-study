@@ -16,16 +16,10 @@ else:
     answer = 0
     while start <= end:
         mid = ( start + end ) // 2
-        sum_money = 0
-        for i in arr:
-            if i < mid:
-                sum_money += i
-            else:
-                sum_money += mid
-         
+        sum_money = sum(min(i, mid) for i in arr)
         if sum_money <= money:
             start = mid + 1
             answer = mid
         else:
-            end = mid - 1    
+            end = mid - 1
     print(answer)        

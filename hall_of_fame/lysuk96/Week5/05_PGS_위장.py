@@ -8,14 +8,11 @@ def solution(clothes):
     dressroom = defaultdict(int)
     for cloth in clothes:
         dressroom[cloth[1]] += 1
-    
-    dress_num = []
-    for dress in dressroom:
-        dress_num.append(dressroom[dress]+1)
-    
+
+    dress_num = [value + 1 for value in dressroom.values()]
     answer = 1
-    for i in range(len(dress_num)):
-        answer*=dress_num[i]
+    for item in dress_num:
+        answer *= item
     return answer-1
 
 # 비효율적 풀이 : combination 구해서 직접 더하기

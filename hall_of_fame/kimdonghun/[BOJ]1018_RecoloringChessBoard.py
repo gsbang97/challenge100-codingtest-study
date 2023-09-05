@@ -1,11 +1,7 @@
 import sys
 
 M, N = map(int, sys.stdin.readline().split())
-chess_board = []
-
-for i in range (M):
-    chess_board.append(list(sys.stdin.readline()[:-1]))
-
+chess_board = [list(sys.stdin.readline()[:-1]) for _ in range (M)]
 #print(chess_board)
 
 white_upper_board = [
@@ -38,7 +34,7 @@ for i in range(M):
         
         diff_cnt_white = 0
         diff_cnt_black = 0
-        
+
         block_over = False
         black_flag = False
         white_flag = False
@@ -65,9 +61,7 @@ for i in range(M):
 
         diff_min_cnt = min(diff_cnt_black, diff_cnt_white)
 
-        if min_cnt_change > diff_min_cnt:
-                min_cnt_change = diff_min_cnt
-        
+        min_cnt_change = min(min_cnt_change, diff_min_cnt)
 print(min_cnt_change)
 #print(chess_board)
     

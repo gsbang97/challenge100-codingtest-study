@@ -17,9 +17,5 @@ while q:
             visit[com] = True
             q.append(com)
 
-answer = 0
-# print(visit)
-for flag in visit:
-    if flag:
-        answer+=1
+answer = sum(1 for flag in visit if flag)
 print(answer-1)

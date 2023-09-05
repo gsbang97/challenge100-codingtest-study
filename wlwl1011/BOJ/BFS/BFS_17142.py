@@ -14,17 +14,9 @@ def isComplete(visited,virus):
         for j in range(N):
             if arr[i][j] == 1:
                 continue
-            else:    
-                if visited[i][j]:
-                    continue
-                elif (i,j) in virus:
-                    continue
-                elif arr[i][j] == 2:
-                    #print('ya')
-                    continue 
-                else:
-                    #print(i,j)
-                    return False    
+            if not visited[i][j] and (i, j) not in virus and arr[i][j] != 2:
+                #print(i,j)
+                return False    
 
     return True                
 
@@ -32,10 +24,7 @@ arr = [ [0 for _ in range(N)] for _ in range(N)]
 virus = []
 for i in range(N):
     arr[i] = list(map(int, input().split()))
-    for j in range(N):
-        if arr[i][j] == 2:
-            virus.append((i,j))
-
+    virus.extend((i, j) for j in range(N) if arr[i][j] == 2)
 virus_list = list(combinations(virus,M))   
 
 #print(virus_list)
@@ -48,7 +37,7 @@ for virus in virus_list:
     visited = [ [0 for _ in range(N)] for _ in range(N)]
     for i in virus:
         queue.append(i)
-    
+
     time = 0
     while queue:
            
@@ -58,12 +47,11 @@ for virus in virus_list:
             ty = y + dy[t]
             if 0<= tx < N and 0 <= ty < N: 
                 if arr[tx][ty] != 1 and not visited[tx][ty] and (tx,ty) not in virus:#벽이 아니고 방문한적 없고, 활성 바이러스 위치도 아니면
-                    if arr[tx][ty] == 2 and (tx,ty) not in virus: #바이러스 위치긴 하나 비활성
-                        visited[tx][ty] = visited[x][y] + 1
+                    visited[tx][ty] = visited[x][y] + 1
+                    if arr[tx][ty] == 2: #바이러스 위치긴 하나 비활성
                         queue.append((tx,ty))
                         continue
                     else:
-                        visited[tx][ty] = visited[x][y] + 1
                         queue.append((tx,ty))
                         time = max(time, visited[tx][ty])
     # print(time)               

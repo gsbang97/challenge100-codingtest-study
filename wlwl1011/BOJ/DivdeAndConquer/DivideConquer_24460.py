@@ -15,14 +15,13 @@ def special_award(x, y, n):
 
     if n == 1:
         return arr[x][y]
-    else:
-        n = n // 2
-        second_minimum = [special_award(x,y,n),special_award(x,y+n,n),special_award(x+n,y,n),special_award(x+n,y+n,n)]
-        second_minimum.sort()
-        return second_minimum[1]
+    n = n // 2
+    second_minimum = [special_award(x,y,n),special_award(x,y+n,n),special_award(x+n,y,n),special_award(x+n,y+n,n)]
+    second_minimum.sort()
+    return second_minimum[1]
 
 N = int(input())
-arr = [ [0 for i in range(N)] for i in range(N) ]
+arr = [[0 for _ in range(N)] for _ in range(N)]
 
 
 for i in range(N):

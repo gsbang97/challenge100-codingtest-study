@@ -4,23 +4,22 @@ import sys
 
 N, M, start = map(int, input().split())
 edge = defaultdict(list)
-for i in range(M):
+for _ in range(M):
     v1, v2 = map(int, input().split())
     edge[v1].append(v2)
     edge[v2].append(v1)
 
-for i in edge:
-    edge[i].sort()
+for value in edge.values():
+    value.sort()
 
 d_check = []
 def dfs(x):
-    if x not in d_check:
-        print(x, end=' ')
-        d_check.append(x)
-        for i in edge[x]:
-            dfs(i)
-    else :
+    if x in d_check:
         return
+    print(x, end=' ')
+    d_check.append(x)
+    for i in edge[x]:
+        dfs(i)
 
 b_check =[start]
 queue = deque([start])

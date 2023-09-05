@@ -3,7 +3,7 @@ import math
 
 T = int(sys.stdin.readline())
 
-for i in range(T) :
+for _ in range(T):
     K = int(sys.stdin.readline())
     N = int(sys.stdin.readline())
 
@@ -12,7 +12,7 @@ for i in range(T) :
     for l in range(N+1) :
             m_list[l] = l
 
-    for j in range(K) :
+    for _ in range(K):
         for l in range(1, N+1) :
             m_list[l] = m_list[l] + m_list[l-1]
 

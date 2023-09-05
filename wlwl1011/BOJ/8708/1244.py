@@ -21,38 +21,28 @@ arr = [0] + list(map(int,input().split()))
 student_N = int(input())
 student = []
 
-for i in range(student_N):
+for _ in range(student_N):
     sex, number = map(int, input().split())
     #student.append(list(sex, number))
     if sex == 1:
         for j in range(1, switch_N+1):
             if j % number == 0: # 스위치 번호가 자기가 받은 수의 배수이면
                 # 그 스위치의 상태를 바꾼다.
-                if arr[j]:
-                    arr[j] = 0
-                else:
-                    arr[j] = 1     
+                arr[j] = 0 if arr[j] else 1
     else: #여학생이면     
         start = number
         end = number
         for j in range(1, switch_N+1):
             
             if number+j <= switch_N and number-j > 0:
-                if arr[number+j] == arr[number-j] :
-                    start = number-j
-                    end = number+j
-                else:
+                if arr[number + j] != arr[number - j]:
                     break  
-              
-        #print(start,end)       
+
+                start = number-j
+                end = number+j
+        #print(start,end)
         for j in range(start, end+1):
-            if arr[j]:
-                arr[j] = 0
-            else:
-                arr[j] = 1    
-    #print(*arr[1:])                     
-
-
+            arr[j] = 0 if arr[j] else 1
 for i in range(1, switch_N+1):
     print(arr[i],end=' ')
     if i % 20 == 0:

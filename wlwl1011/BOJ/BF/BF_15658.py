@@ -12,10 +12,7 @@ def check(i, j, k):
     elif k == 2:
         return i * j
     else:
-        if i < 0 :
-            return (-i//j)*-1
-        else:
-            return i//j
+        return (-i//j)*-1 if i < 0 else i//j
 
 def solve(depth, number):
     if depth == N:

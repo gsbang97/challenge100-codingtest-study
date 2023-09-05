@@ -17,7 +17,7 @@ class Solution:
         for right in range(len(s)): 
             cnt[s[right]] = 1 + cnt.get(s[right], 0)    ## window 내의 빈도 저장
 
-            if s[right] in tcnt.keys() and cnt[s[right]] == tcnt[s[right]]:
+            if s[right] in tcnt and cnt[s[right]] == tcnt[s[right]]:
                 have += 1
 
 
@@ -31,7 +31,7 @@ class Solution:
 
                 cnt[s[left]] -= 1
 
-                if s[left] in tcnt.keys() and cnt[s[left]] < tcnt[s[left]]:
+                if s[left] in tcnt and cnt[s[left]] < tcnt[s[left]]:
                     have -= 1
 
                 left += 1

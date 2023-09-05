@@ -22,18 +22,18 @@ else:
             flag = False
             print(cnt)
             break
-        if x*x <= t and not x*x in visited:
+        if x * x <= t and x * x not in visited:
             visited.add(x*x)
-            queue.append((x*x,cnt+'*'))   
-        if x+x <= t and not x+x in visited:
+            queue.append((x*x, f'{cnt}*'))
+        if x + x <= t and x + x not in visited:
             visited.add(x+x)
-            queue.append((x+x,cnt+'+'))
-        if not x-x in visited:
+            queue.append((x+x, f'{cnt}+'))
+        if x - x not in visited:
             visited.add(x-x)
-            queue.append((x-x,cnt+'-'))   
-        if x != 0 and not x//x in visited:
+            queue.append((x-x, f'{cnt}-'))
+        if x != 0 and x // x not in visited:
             visited.add(x//x)
-            queue.append((x//x,cnt+'/'))
+            queue.append((x//x, f'{cnt}/'))
     if flag:
         print(-1)
 

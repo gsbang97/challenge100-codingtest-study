@@ -2,10 +2,7 @@ import sys
 from collections import deque
 
 N = int(sys.stdin.readline())
-graph = []
-for i in range(N):
-    graph.append(list(sys.stdin.readline()[:-1]))
-
+graph = [list(sys.stdin.readline()[:-1]) for _ in range(N)]
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 

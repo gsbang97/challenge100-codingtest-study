@@ -32,9 +32,7 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]:
     sort = [sorted(word) for word in strs]
     words = collections.defaultdict(list)
     for index, value in enumerate(sort):
-        word = ''
-        for i in range(len(value)):
-            word += value[i]
+        word = ''.join(value[i] for i in range(len(value)))
         words[word].append(index)
 
     ans =[]

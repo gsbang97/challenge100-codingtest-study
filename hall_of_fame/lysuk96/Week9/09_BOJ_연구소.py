@@ -25,12 +25,9 @@ def bfs_n_cnt(_map, virus):
 
 
 N, M = map(int, input().split(" "))
-mp = []
 virus = []
 air = []
-for _ in range(N):
-    mp.append(list(map(int, input().split(" "))))
-
+mp = [list(map(int, input().split(" "))) for _ in range(N)]
 for i in range(N):
     for j in range(M):
         if mp[i][j] == 2:

@@ -13,5 +13,5 @@ for _ in range(n):
 
 for i in range(1, len(cntList)):
     if cntList[i] != 0:
-        for j in range(cntList[i]):
+        for _ in range(cntList[i]):
             print(i)

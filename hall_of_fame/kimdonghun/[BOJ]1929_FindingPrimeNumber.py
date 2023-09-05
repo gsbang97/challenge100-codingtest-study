@@ -1,7 +1,7 @@
 import sys
 
 M, N = map(int, sys.stdin.readline().split())
-plist = [True for i in range(N+1)]
+plist = [True for _ in range(N+1)]
 
 #print(plist)
 

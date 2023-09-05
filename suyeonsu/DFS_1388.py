@@ -8,9 +8,7 @@ def dfs(x, y):
         visited[nx][y] = 1
         dfs(nx, y)
 
-answer = 0
-for row in board:
-    answer += len([e for e in (''.join(row)).split('|') if e])
+answer = sum(len([e for e in (''.join(row)).split('|') if e]) for row in board)
 for i in range(n):
     for j in range(m):
         if board[i][j] == '|' and not visited[i][j]:

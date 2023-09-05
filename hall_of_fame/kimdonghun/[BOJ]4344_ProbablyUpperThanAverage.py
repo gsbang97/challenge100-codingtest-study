@@ -2,7 +2,7 @@ import sys
 
 C = int(sys.stdin.readline())
 
-for i in range(C) :
+for _ in range(C):
     tmp_list = list(map(int, sys.stdin.readline().split()))
 
     N = tmp_list[0]

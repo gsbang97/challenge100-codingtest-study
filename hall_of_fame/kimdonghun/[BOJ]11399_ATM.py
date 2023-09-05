@@ -1,9 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-p_list = list(map(int, sys.stdin.readline().split()))
-
-p_list.sort()
+p_list = sorted(map(int, sys.stdin.readline().split()))
 tot_time = 0
 accumulate_time = 0
 

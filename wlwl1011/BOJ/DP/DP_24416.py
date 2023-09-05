@@ -9,11 +9,10 @@ global count2
 
 def fib(n):
     global count1
-    if n == 1 or n == 2:
-        count1 += 1
-        return 1;  # 코드1
-    else:
+    if n not in [1, 2]:
         return (fib(n - 1) + fib(n - 2))
+    count1 += 1
+    return 1
 
 def fibonacci(n):
     global count2

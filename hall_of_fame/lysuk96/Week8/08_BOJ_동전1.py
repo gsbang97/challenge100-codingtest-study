@@ -1,9 +1,6 @@
 n, k = map(int, input().split(" "))
 dp = [0] * (k+1)
-coin = []
-for i in range(n):
-    coin.append(int(input()))
-
+coin = [int(input()) for _ in range(n)]
 for i in range(n):
     if coin[i] > k :
         continue

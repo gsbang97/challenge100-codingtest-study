@@ -1,11 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-triangle =[]
-
-for i in range(N):
-    triangle.append(list(map(int, sys.stdin.readline().split())))
-
+triangle = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 for i in range(1, N):
     for j in range(len(triangle[i])):
         if j == 0:

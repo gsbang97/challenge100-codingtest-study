@@ -5,10 +5,7 @@
 # atexit.register(lambda: os.write(1, stdout.getvalue()))
 
 n = int(input())
-arr = []
-for _ in range(n):
-    arr.append(list(map(int,input().split())))
-
+arr = [list(map(int,input().split())) for _ in range(n)]
 dp = [[0] * n for _ in range(n)]
 dp[0][0] = 1
 

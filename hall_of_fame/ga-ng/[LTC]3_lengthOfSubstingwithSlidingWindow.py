@@ -18,11 +18,11 @@ class Solution(object):
             if s[end+1] in s[start:end+1]:
                 start += 1
                 # end += 1
-            elif s[end+1] not in s[start:end+1]:
+            else:
                 end += 1
 
             ans = max(ans, len(s[start:end+1]))
-        
+
         return ans
             
 

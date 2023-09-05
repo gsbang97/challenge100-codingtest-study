@@ -4,11 +4,7 @@ input = sys.stdin.readline
 
 n = int(input())
 
-cor = []
-
-for _ in range(n):
-    cor.append(list(map(int, input().split())))
-    
+cor = [list(map(int, input().split())) for _ in range(n)]
 cor.sort()
 
 for i in cor:

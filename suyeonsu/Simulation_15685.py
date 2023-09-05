@@ -8,14 +8,14 @@ for _ in range(n):
 
     seq = [d]
     for _ in range(g):
-        seq += list((mv + 1) % 4 for mv in seq[::-1])
-    
+        seq += [(mv + 1) % 4 for mv in seq[::-1]]
+
     a[x][y] = 1
     for mv in seq:
         nx, ny = x + dx[mv], y + dy[mv]
         a[nx][ny] = 1
         x, y = nx, ny
-    
+
 answer = 0
 for i in range(100):
     for j in range(100):

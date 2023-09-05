@@ -7,9 +7,7 @@ class Solution:
         for i in range(len(nums)):
             for j in range(i+1, len(nums)):
                 if nums[i] + nums[j] == target:
-                    ans_l.append(i)
-                    ans_l.append(j)
-
+                    ans_l.extend((i, j))
         return ans_l
                 
         

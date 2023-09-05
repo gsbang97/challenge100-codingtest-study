@@ -8,18 +8,17 @@ accumulate_num = ""
 minus_flag = False
 
 for e in express:
-    if e == "+" or e == "\n" or e == "-":
+    if e in ["+", "\n", "-"]:
         #print("==" + str(tot))
         if minus_flag:
             tot -= int(accumulate_num)
-            accumulate_num = ""
         else:
             tot += int(accumulate_num)
-            accumulate_num = ""
-        if e == "-":
-            minus_flag = True
+        accumulate_num = ""
     else:
         accumulate_num += e
         #print(accumulate_num)
 
+    if e == "-":
+        minus_flag = True
 print(tot)

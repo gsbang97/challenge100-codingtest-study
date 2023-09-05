@@ -11,14 +11,9 @@ end = max(trees)
 res = 0
 
 while start <= end:
-    total = 0
-    
     h = (end + start) // 2
-    
-    for x in trees:
-        if x > h:
-            total += x - h
-    
+
+    total = sum(x - h for x in trees if x > h)
     if total < m:
         end = h - 1
     else:

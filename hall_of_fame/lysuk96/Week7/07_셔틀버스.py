@@ -7,34 +7,29 @@ def solution(n, t, m, timetable):
     q = deque(timetable)
     now = "09:00"
     answer = ''
-    
+
     seat = 0
-    for i in range(n-1):
+    for _ in range(n-1):
         for _ in range(m):
             if q and q[0] <= now:
                 q.popleft()
             else: break
-                
+
         hour = int(now.split(":")[0])
         minute = int(now.split(":")[1])
-        now = str(hour + (minute+t)//60).zfill(2) + ":" + str((minute+t)%60).zfill(2)
-        # print(now)
-    
+        now = f"{str(hour + (minute + t) // 60).zfill(2)}:{str((minute + t) % 60).zfill(2)}"
     # 마지막 탈때
-    if len(q) < m:
+    if len(q) >= m and q[m - 1] > now or len(q) < m:
         answer = now
     else:
-        if q[m-1] > now:
-            answer = now
-        else:
-            cnt = 1
-            while cnt <= m and q[m-cnt] == q[m-1]:
-                cnt+=1
-            answer = q[m-cnt+1]
-            hour = int(answer.split(":")[0])
-            minute = int(answer.split(":")[1])
-            answer = str(hour + (minute-1)//60).zfill(2) + ":" + str((minute-1)%60).zfill(2)
-            
-        
+        cnt = 1
+        while cnt <= m and q[m-cnt] == q[m-1]:
+            cnt+=1
+        answer = q[m-cnt+1]
+        hour = int(answer.split(":")[0])
+        minute = int(answer.split(":")[1])
+        answer = f"{str(hour + (minute - 1) // 60).zfill(2)}:{str((minute - 1) % 60).zfill(2)}"
+                    
+
     # print(q)
     return answer

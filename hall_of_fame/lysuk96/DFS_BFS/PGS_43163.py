@@ -8,9 +8,7 @@ def solution(begin, target, words):
         for i in range(len(x)):
             if x[i] != y[i]:
                 count+=1
-        if count == 1:
-            return True
-        return False
+        return count == 1
 
     dic = defaultdict(list)
 
@@ -23,7 +21,7 @@ def solution(begin, target, words):
             if compare(words[i], words[j]):
                 dic[words[i]].append(words[j])
                 dic[words[j]].append(words[i])
-    
+
     # print(dic)
 
     q = deque([begin])

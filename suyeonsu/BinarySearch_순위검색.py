@@ -10,9 +10,9 @@ def solution(info, query):
                 key = ''.join(c)
                 if key not in d: d[key] = []
                 d[key].append(score)
-                
+
     answer = []
-    for k in d.keys(): d[k].sort()
+    for k in d: d[k].sort()
     for q in query:
         k = q.split()[:-1]
         score = int(q.split()[-1])

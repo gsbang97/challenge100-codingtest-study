@@ -7,12 +7,10 @@ def calculate(a, b, ys):
         return a + b
     elif ys == 1:
         return a - b
-    elif ys ==2 :
+    elif ys == 2:
         return a*b
-    elif ys ==3:
-        if a<0:
-            return -((-a)//b)
-        else: return a//b
+    elif ys == 3:
+        return -((-a)//b) if a<0 else a//b
     
 def tracking(idx, result):
     global m,M

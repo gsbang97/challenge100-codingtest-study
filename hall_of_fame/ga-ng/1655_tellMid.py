@@ -17,14 +17,14 @@ left = []
 right = []
 ans = []
 
-for i in range(n):
+for _ in range(n):
     num = int(input().rstrip())
-    
+
     if len(left) == len(right):
         heapq.heappush(left, (-num, num))
     else:
         heapq.heappush(right, (num, num))
-    
+
 
     if right and left[0][1] > right[0][1]:
         max = heapq.heappop(left)[1]

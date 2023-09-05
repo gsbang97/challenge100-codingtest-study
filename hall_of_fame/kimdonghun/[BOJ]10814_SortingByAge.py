@@ -13,7 +13,7 @@ def compare(a,b):
 N = int(sys.stdin.readline())
 p_list = []
 
-for i in range(N):
+for _ in range(N):
     cur_l = list(sys.stdin.readline().split())
     #print(cur_l)
     p_list.append((int(cur_l[0]), cur_l[1]))

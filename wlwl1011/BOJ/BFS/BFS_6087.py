@@ -29,9 +29,7 @@ V = [[0] * W for _ in range(H)]
 dr = [[0, -1], [0, 1], [-1, 0], [1, 0]]
 conn_points = []
 for r in range(H):
-    for c in range(W):
-        if A[r][c] == 'C':
-            conn_points.append([r, c])
+    conn_points.extend([r, c] for c in range(W) if A[r][c] == 'C')
 start_r, start_c = conn_points[0][0], conn_points[0][1]
 dst_r, dst_c = conn_points[1][0], conn_points[1][1]
 print(bfs(start_r, start_c, dst_r, dst_c))

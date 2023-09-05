@@ -3,7 +3,7 @@ from collections import deque
 input = sys.stdin.readline
 #graph 구성
 N = int(input())
-graph = list(list(map(int, input().split())) for _ in range(N))
+graph = [list(map(int, input().split())) for _ in range(N)]
 #이동 방향
 dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
@@ -52,27 +52,22 @@ def solve(visited):
                     min_distance = visited[i][j]
                     x, y = i, j
     #모두 탐색해도 그대로 INF이면 먹을 물고기가 없다는 것
-    if min_distance == INF:
-        return False
-    else:
-        return x, y, min_distance
+    return False if min_distance == INF else (x, y, min_distance)
 
 
 answer = 0
 food = 0
 
 while True:
-    result = solve(BFS())
-
-    if not result:
-        print(answer)
-        break
-    else:
+    if result := solve(BFS()):
         now_x, now_y = result[0], result[1]
         answer += result[2]
         graph[now_x][now_y] = 0
         food += 1
 
+    else:
+        print(answer)
+        break
     if food >= shark_size:
         shark_size += 1
         food = 0

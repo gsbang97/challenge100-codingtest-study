@@ -12,18 +12,18 @@ while True:
     for p in p_list:
         if p == "(":
             s.append("(")
-        elif p == "[":
-            s.append("[")
         elif p == ")":
-            if len(s) > 0:
+            if s:
                 if s[-1] == "[":
                     isValid = False
                     continue
                 s.pop()
             else:
                 isValid = False
+        elif p == "[":
+            s.append("[")
         elif p == "]":
-            if len(s) > 0:
+            if s:
                 if s[-1] == "(":
                     isValid = False
                     continue
@@ -31,8 +31,8 @@ while True:
                 s.pop()
             else:
                 isValid = False
-        
-    if isValid and len(s) == 0:
+
+    if isValid and not s:
         print("yes")
     else:
         print("no")

@@ -4,11 +4,13 @@ def solution(n, k):
         x = str(n%k) + x
         n //= k
     x = [int(num) for num in x.split('0') if num]
-    
+
     answer = 0
     for num in x:
-        if num in [1, 2]: 
-            if num == 2: answer += 1
+        if num == 1: 
+            continue
+        elif num == 2: 
+            answer += 1
             continue
         for i in range(2, int(num**(1/2))+1):
             if num % i == 0: break

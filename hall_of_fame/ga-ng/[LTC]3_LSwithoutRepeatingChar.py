@@ -9,7 +9,7 @@ class Solution(object):
         d = {}
 
         while right < len(s):
-            if not s[right] in d:
+            if s[right] not in d:
                 d[s[right]] = 1
 
             else:

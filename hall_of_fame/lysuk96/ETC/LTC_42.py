@@ -1,7 +1,6 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
         stack = []
-        volume = 0
         for i in range(len(height)):
             while stack and height[i] > height[stack[-1]]:
                 top = stack.pop()
@@ -16,4 +15,4 @@ class Solution:
 
             stack.append(i)
 
-        return volume
+        return 0

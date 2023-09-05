@@ -2,18 +2,16 @@ from itertools import combinations
 
 def solution(orders, course):
     answer = []
-    
+
     for n in course:
-        menu = dict()
+        menu = {}
         for o in orders:
             if len(o) >= n:
                 for case in combinations(sorted(o), n):
                     if ''.join(case) not in menu: menu[''.join(case)] = 0
                     menu[''.join(case)] += 1
-                    
-        for k, v in menu.items():
-            if v >= 2 and v == max(menu.values()): answer.append(k)
-            
+
+        answer.extend(k for k, v in menu.items() if v >= 2 and v == max(menu.values()))
     answer.sort()
     return answer
   

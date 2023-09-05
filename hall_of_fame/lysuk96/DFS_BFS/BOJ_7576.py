@@ -46,6 +46,6 @@ M, N = map(int, input().split())
 # for r in range(M):
 #     for c in range(N):
 #         tomatoes[r][c] = int(input())
-tomatoes = [[n for n in map(int,input().split())] for _ in range(N)]
+tomatoes = [list(map(int,input().split())) for _ in range(N)]
 # print(tomatoes)
 solution(M, N, tomatoes)

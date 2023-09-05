@@ -13,7 +13,7 @@ cost = 0
 hq = [(0, 1)]
 visited = []
 while len(visited) < n:
-    if len(hq) == 0:
+    if not hq:
         cost = -1
         break
     c, i = heapq.heappop(hq)

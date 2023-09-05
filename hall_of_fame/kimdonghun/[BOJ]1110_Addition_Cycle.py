@@ -1,8 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-A = N // 10
-B = N % 10
+A, B = divmod(N, 10)
 cycle_Num = 0
 
 while 1:

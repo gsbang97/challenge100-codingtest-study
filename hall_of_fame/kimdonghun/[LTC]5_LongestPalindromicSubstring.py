@@ -1,12 +1,12 @@
 import sys
 
 class Solution:
-    def expand(left, right, s):
-        while left >= 0 and right < len(s) and s[left] == s[right]:
-            left -= 1
+    def expand(self, right, s):
+        while self >= 0 and right < len(s) and s[self] == s[right]:
+            self -= 1
             right += 1
 
-        return s[left+1 : right]
+        return s[self + 1:right]
 
     def longestPalindrome(self, s: str) -> str:
         if len(s) < 2 or s == s[::-1]:

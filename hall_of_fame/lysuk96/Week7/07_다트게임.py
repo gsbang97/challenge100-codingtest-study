@@ -3,13 +3,12 @@
 def solution(dartResult):
     res = []
     sdt = ['S','D','T']
-    idx = 0
-    while idx < 3:
+    for idx in range(3):
         num = int(dartResult[0])
         if dartResult[1]=='0':
             num = int(dartResult[:2])
             dartResult = dartResult[1:]
-            
+
         if dartResult[1] in sdt:
             res.append(num**(sdt.index(dartResult[1])+1))
 
@@ -26,8 +25,5 @@ def solution(dartResult):
         if idx < 2:
             dartResult = dartResult[cnt:]
             # print(idx, dartResult)
-        idx+=1
-        
-
     # print(res)
     return sum(res)

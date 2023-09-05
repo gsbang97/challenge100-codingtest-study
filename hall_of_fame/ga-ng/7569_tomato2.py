@@ -5,7 +5,7 @@ input = sys.stdin.readline
 
 m, n, h = map(int, input().split())
 
-graph = [list(list(map(int, input().split())) for _ in range(n)) for _ in range(h)]
+graph = [[list(map(int, input().split())) for _ in range(n)] for _ in range(h)]
 
 q = deque()
 dx = [-1, 1, 0, 0, 0, 0]

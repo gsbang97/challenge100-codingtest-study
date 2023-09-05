@@ -4,11 +4,8 @@ from collections import deque
 dx = [-1, 0, 1, 0]
 dy = [0, -1, 0, 1]
 
-graph = []
 N, M = map(int, sys.stdin.readline().split())
-for i in range(N):
-    graph.append(list(map(int, sys.stdin.readline()[:-1])))
-
+graph = [list(map(int, sys.stdin.readline()[:-1])) for _ in range(N)]
 #print(graph)
 #print(*graph, sep="\n")
 visited = [[False for _ in range(M)] for _ in range(N)]

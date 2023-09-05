@@ -1,10 +1,7 @@
 import sys
 
 N = int(sys.stdin.readline())
-paper_l = []
-for i in range(N):
-    paper_l.append(list(sys.stdin.readline().split()))
-
+paper_l = [list(sys.stdin.readline().split()) for _ in range(N)]
 #print(paper_l)
 
 one_cnt = 0

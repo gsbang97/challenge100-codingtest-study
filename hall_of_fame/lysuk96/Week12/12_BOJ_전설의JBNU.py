@@ -42,12 +42,12 @@ for _ in range(M):
         insort(keys, tmp[0])
     elif command == 2:
         now = find(tmp[0])
-        if now != '?' and now != -1:
+        if now not in ['?', -1]:
             dic[now] = tmp[1]
-        # print(dic)
+            # print(dic)
     elif command ==3:
         now = find(tmp[0])
-        if now != '?' and now != -1:
+        if now not in ['?', -1]:
             print(dic[now])
         else:
             print(now)

@@ -55,9 +55,9 @@ def calc_score(b):
 def set_direction(a, b):
     global dir
     if a > b:
-        dir = dir+2 if dir+2 <= 3 else 3-dir
+        dir = dir+2 if dir <= 1 else 3-dir
     elif a < b:
-        dir = dir-2 if dir-2 >= 0 else abs(dir-3)
+        dir = dir-2 if dir >= 2 else abs(dir-3)
 
 
 for _ in range(k):

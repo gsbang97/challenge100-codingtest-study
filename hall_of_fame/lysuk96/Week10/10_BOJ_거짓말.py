@@ -33,11 +33,7 @@ while q:
 
 answer=0
 for party in party_set:
-    flag = True
-    for p in party:
-        if visit[p]:
-            flag = False
-            break
+    flag = not any(visit[p] for p in party)
     if flag:
         answer+=1
 print(answer)

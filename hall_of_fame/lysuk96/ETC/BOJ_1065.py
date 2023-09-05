@@ -30,19 +30,14 @@ def digit_3(num):
     first = num//100
     second = num%100//10
     third = num%10
-    if (second-first) == (third - second):
-        return 1
-    else: 
-        return 0
+    return 1 if (second-first) == (third - second) else 0
     
 num = int(input())
 ans = 0
 if num<100:
     ans = num
 elif num<1000:
-    ans = 99
-    for i in range(100, num+1):
-        ans += digit_3(i)
+    ans = 99 + sum(digit_3(i) for i in range(100, num+1))
 else: ans = 144
 
 print(ans)

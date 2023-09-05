@@ -1,5 +1,6 @@
 n = input()
-if len(n) == 1: n = '0' + n
+if len(n) == 1:
+    n = f'0{n}'
 
 answer = 0
 num = n

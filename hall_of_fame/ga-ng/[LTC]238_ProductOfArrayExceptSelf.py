@@ -9,10 +9,10 @@ class Solution:
         if zerocnt > 1:         ## 2개
             ans = [0] * length  ## [0 1221 0 ]
 
-        elif zerocnt == 1:          ## 1개
+        elif zerocnt == 1:      ## 1개
             ans = [0] * length      ## 싹다 영
             zeroidx = nums.index(0) ## 0 인덱스 뽑아서 왜냐면 0에만 값있으니까
-            ans[zeroidx] = math.prod(nums[0:zeroidx]) * math.prod(nums[zeroidx+1:])
+            ans[zeroidx] = math.prod(nums[:zeroidx]) * math.prod(nums[zeroidx+1:])
 
         else:                   ## 0이 없으면
             pre, suf = 1, 1     ## 보고 있는 값 앞뒤로 pre suf

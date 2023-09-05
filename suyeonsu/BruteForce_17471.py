@@ -2,7 +2,7 @@ from itertools import combinations
 from collections import deque
 
 def check(s):
-    visited = set([list(s)[0]])
+    visited = {list(s)[0]}
     dq = deque([list(s)[0]])
     while dq:
         x = dq.popleft()

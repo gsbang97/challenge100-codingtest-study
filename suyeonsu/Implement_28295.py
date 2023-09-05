@@ -7,7 +7,7 @@ for _ in range(10):
         if i > 3:
             i = 0
     elif t == 2:
-        i += 2 if i+2 <= 3 else -2
+        i += 2 if i <= 1 else -2
     else:
         i -= 1
         if i < 0:

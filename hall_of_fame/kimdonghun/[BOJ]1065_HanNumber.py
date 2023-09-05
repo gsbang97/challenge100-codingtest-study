@@ -39,11 +39,5 @@ def judge_han_num(num):
 for i in range (1, N+1) :
     judge_han_num(i)
 
-count_han = 0
-
-for i in range (1, N+1) :
-    if isHanNum[i] :
-        #print(i)
-        count_han += 1
-
+count_han = sum(1 for i in range (1, N+1) if isHanNum[i])
 print(count_han)

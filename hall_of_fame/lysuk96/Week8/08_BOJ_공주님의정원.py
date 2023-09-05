@@ -33,17 +33,15 @@ for start, end in flowers:
 
     # print(answer, now, next)
     if start <= now < end:
-        if next < end:
-            next = end
+        next = max(next, end)
+    elif start <= next < end:
+        answer+=1
+        now = next
+        next = end
+    elif end <= next:
+        continue
     else:
-        if start <= next < end:
-            answer+=1
-            now = next
-            next = end
-        elif end <= next:
-            continue
-        else:
-            break
+        break
 if next <= month[11]:
     answer = 0
 else:

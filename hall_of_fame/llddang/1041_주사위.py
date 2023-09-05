@@ -22,12 +22,12 @@ def main():
         a, b, c = arr[i], arr[j], arr[k]
 
         semiAnswer = 0
-        semiAnswer = semiAnswer + (a*(N-1)*N + b*N) * 4
+        semiAnswer += (a*(N-1)*N + b*N) * 4
         semiAnswer = semiAnswer + a*(N-2)*(N-2) + b*(N-2)*4 + c*4
 
         if answer == -1 or semiAnswer < answer:
           answer = semiAnswer
-  
+
   print(answer)
 
 if __name__ == "__main__":

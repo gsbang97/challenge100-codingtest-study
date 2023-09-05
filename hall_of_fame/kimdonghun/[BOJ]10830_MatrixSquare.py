@@ -3,9 +3,7 @@ import sys
 N, B = map(int, sys.stdin.readline().split())
 P = 1000
 
-N_matrix = []
-for i in range(N):
-    N_matrix.append(list(map(int, sys.stdin.readline().split())))
+N_matrix = [list(map(int, sys.stdin.readline().split())) for _ in range(N)]
 #print(N_matrix)
 
 def solution(matrix, B):

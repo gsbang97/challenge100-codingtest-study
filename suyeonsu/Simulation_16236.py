@@ -29,17 +29,16 @@ while True:
             if 0 <= nx < n and 0 <= ny < n and not visited[nx][ny] and board[nx][ny] <= size:
                 dq.append((nx, ny, cost+1))
                 visited[nx][ny] = 1
-    if fish:
-        cost, x, y = heappop(fish)
-        time += cost
-        board[baby[0]][baby[1]] = 0
-        baby = x, y
-        board[x][y] = 9
-        cnt += 1
-        if cnt == size:
-            size += 1
-            if size > 9: size = 9
-            cnt = 0
-    else:
+    if not fish:
         break
+    cost, x, y = heappop(fish)
+    time += cost
+    board[baby[0]][baby[1]] = 0
+    baby = x, y
+    board[x][y] = 9
+    cnt += 1
+    if cnt == size:
+        size += 1
+        size = min(size, 9)
+        cnt = 0
 print(time)

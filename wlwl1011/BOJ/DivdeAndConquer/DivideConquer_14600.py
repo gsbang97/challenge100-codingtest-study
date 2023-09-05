@@ -9,9 +9,9 @@ atexit.register(lambda: os.write(1, stdout.getvalue()))
 def solution(r, c, k, area):                        # 시작 좌표, 제곱 수, 구역
     global num
 
-    if k <= 1:                                      # 가장 안쪽 단계이면
+    if k <= 1:                                  # 가장 안쪽 단계이면
         cnt = 3                                     # ㄱ자 모양 타일은 3개만 채워야 하므로
-        if area == 0 or area == 4:                  # 왼쪽 위와 가운데 영역
+        if area in [0, 4]:                  # 왼쪽 위와 가운데 영역
             for i in range(r, r+2):                 # 위에서 아래, 왼쪽에서 오른쪽
                 for j in range(c, c+2):
                     if not board[i][j] and cnt:
@@ -37,7 +37,7 @@ def solution(r, c, k, area):                        # 시작 좌표, 제곱 수,
                         cnt -= 1
         num += 1
         return
-    
+
     solution(r, c, k-1, 0)                          # 각 영역으로 재귀, 분할정복
     solution(r, c + 2**(k-1), k-1, 1)
     solution(r + 2**(k-1), c, k-1, 2)

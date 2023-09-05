@@ -6,29 +6,35 @@ sen = input().rstrip()
 
 while sen != ".":
     lst = list(sen)
-    
+
     bra = []
-    
+
     for st in lst:
         
-        if st == '[' or st == '(':
+        if (
+            st not in ['[', '(']
+            and st == ']'
+            and bra
+            and bra[-1] == '['
+            or st not in ['[', '(']
+            and st != ']'
+            and st == ')'
+            and bra
+            and bra[-1] == '('
+        ):
+            bra.pop()
+        elif st not in ['[', '('] and st == ']':
+            bra.append(']')
+            break
+        elif st not in ['[', '('] and st == ')':
+            bra.append(')')
+            break
+
+        elif st in ['[', '(']:
             bra.append(st)
-        elif st == ']':
-            if len(bra) != 0 and bra[-1] == '[':
-                bra.pop()
-            else:
-                bra.append(']')
-                break
-        elif st == ')':
-            if len(bra) != 0 and bra[-1] == '(':
-                bra.pop()
-            else:
-                bra.append(')')
-                break
-                
-    if len(bra) == 0:
+    if not bra:
         print('yes')
     else:
         print('no')
-        
+
     sen = input().rstrip()

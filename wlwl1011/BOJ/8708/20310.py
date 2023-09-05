@@ -21,7 +21,7 @@ for i in S:
     else:
         count_zero += 1
 #print(count_one, count_zero)
-for i in range(count_one//2):
+for _ in range(count_one//2):
     S = S.replace('1','',1)
 #print(S)    
 new_S = []
@@ -39,11 +39,9 @@ for i in range(len(S)-1,-1,-1):
     #print(S[i], new_S, check)    
 
 
-    
+
 
 new_S.reverse()
-S = ''
-for i in range(len(new_S)):
-    S += str(new_S[i])
+S = ''.join(str(new_) for new_ in new_S)
 print(S)
 

@@ -3,12 +3,12 @@ import sys
 
 n = int(sys.stdin.readline().rstrip())
 
-count = dict()
+count = {}
 maxCount = 0
 sum = 0
 data = []
 
-for i in range(n):
+for _ in range(n):
     m = int(sys.stdin.readline().rstrip())
     if m in count:
         count[m] += 1
@@ -22,12 +22,7 @@ data.sort()
 print(round(sum/n))
 print(data[n//2])
 
-mostShow = []
-
-for i,count in count.items() :
-    if count == maxCount:
-        mostShow.append(i)
-
+mostShow = [i for i, count in count.items() if count == maxCount]
 mostShow.sort()
 if len(mostShow) == 1:
     print(mostShow[0])

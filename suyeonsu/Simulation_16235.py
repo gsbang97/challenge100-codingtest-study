@@ -43,7 +43,5 @@ while k:
     fw()
     k -= 1
 
-answer = 0
-for ages in woods.values():
-    answer += len(ages)
+answer = sum(len(ages) for ages in woods.values())
 print(answer)
